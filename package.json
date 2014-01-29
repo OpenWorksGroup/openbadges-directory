@@ -1,0 +1,27 @@
+{
+  "name": "directory-api",
+  "version": "0.1.0",
+  "scripts": {
+    "gulp": "node_modules/.bin/gulp",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "lunr": "~0.4.3",
+    "nedb": "~0.10.0",
+    "event-stream": "~3.1.0",
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.17.1",
+    "gulp": "~3.5.0",
+    "gulp-jshint": "~1.3.4",
+    "gulp-notify": "~0.4.0",
+    "gulp-watch": "~0.5.0",
+    "gulp-mocha": "~0.4.1",
+    "should": "~3.1.2"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
