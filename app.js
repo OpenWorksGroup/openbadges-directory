@@ -1,11 +1,9 @@
 var cluster = require('cluster'),
-    os      = require('os');
+    os      = require('os'),
+    server  = require('./lib/server');
 
 if (cluster.isWorker) {
-  var search = require('./lib/search');
-  return search.load(__dirname + '/db/badges.json', function (/*err*/) {
-    console.log(search.search({}, function () {}));
-  });
+  return server();
 }
 
 for (var i = 0; i < os.cpus().length; i++) {

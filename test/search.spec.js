@@ -22,11 +22,18 @@ describe('Search', function () {
       search.load(badgePath, done);
     });
 
-    it('should find results', function (done) {
+    it('returns the first 10 results with a no arg search', function (done) {
       search.search({}, function (err, result) {
-        result.should.eql([]);
+        result.length.should.equal(10);
         done();
       });
-    })
-  })
+    });
+
+    it('should allow limits', function (done) {
+      search.search({ limit: 2 }, function (err, result) {
+        result.length.should.equal(2);
+        done();
+      });
+    });
+  });
 });
