@@ -1,7 +1,7 @@
 /*global describe, it, beforeEach*/
 require('should');
 var Search    = require('../../lib/search').Search,
-    badgePath = __dirname + '/badges-small.json';
+    badgePath = __dirname + '/../badges-small.json';
 
 
 describe('Search', function () {
