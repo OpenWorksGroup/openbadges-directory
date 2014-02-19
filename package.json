@@ -9,7 +9,8 @@
     "lunr": "~0.4.3",
     "nedb": "~0.10.0",
     "event-stream": "~3.1.0",
-    "restify": "~2.6.1"
+    "restify": "~2.6.1",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
