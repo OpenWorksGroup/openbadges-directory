@@ -36,7 +36,7 @@ describe('Search', function () {
     });
 
     it('lets you search by tags', function (done) {
-      search.search({ tags: ['etc'] }, function (err, result) {
+      search.search({ tags: ['etc', 'education'] }, function (err, result) {
         result.length.should.equal(1);
 
         var firstResult = result[0];
