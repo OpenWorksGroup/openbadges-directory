@@ -62,4 +62,21 @@ describe('Search', function () {
       });
     });
   });
+
+  describe('#get', function () {
+    var search;
+    beforeEach(function (done) {
+      search = new Search();
+      search.load(badgePath, done);
+    });
+
+    it('get by location', function (done) {
+      search.get('http://www.no-reply.com/12', function (err, result) {
+        result.length.should.equal(20202);
+        console.log(result);
+
+        done(err);
+      });
+    });
+  });
 });
