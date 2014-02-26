@@ -23,11 +23,11 @@ located in the project itself, you can set the BADGE_STORE environment variable.
 
 ## API
 
-All endpoints allow for a limit and page field to modify the number of results return, and paginate the results.
+All endpoints allow for a limit and page field to modify the number of results returned, and paginate the results.
 
     {
       limit: int,
-      page: int,
+      page: int
     }
 
 ### /search
@@ -42,7 +42,7 @@ without any criteria?
 *Response*
 
     {
-      data: array of badges
+      "data": [array of badges]
     }
 
 ### /recent
@@ -52,7 +52,24 @@ Returns all recently indexed badges. Does not accept any params.
 *Response*
 
     {
-      data: array of badges
+      "data": [array of badges]
+    }
+
+### /:badgeLocation
+
+Returns a specific badge class, based on the location url (encoded).
+
+*Request*
+
+    /http%3A%2F%2Fwww.no-reply.com%2F12
+
+*Response*
+
+    {
+      "data": {
+        "location": "http://www.no-reply.com/12"
+        ... badge class attributes ...
+      }
     }
 
 ## Approach so far + future

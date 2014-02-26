@@ -78,4 +78,13 @@ describe('Search API', function () {
       });
     });
   });
+
+  describe('/get badge by location', function () {
+    it('should allow getting a badge the badge url', function (done) {
+      client.get('/' + encodeURIComponent('http://www.no-reply.com/12'), function (err, req, res, data) {
+        data.data.location.should.equal('http://www.no-reply.com/12');
+        done();
+      });
+    });
+  });
 });
