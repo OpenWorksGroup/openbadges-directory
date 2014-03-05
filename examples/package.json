@@ -1,0 +1,17 @@
+{
+  "name": "directory_examples",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "browserify": "browserify browser/example.js -o browser/bundle.js"
+  },
+  "dependencies": {
+    "restler": "~3.2.0",
+    "backbone": "~1.1.2",
+    "human-model": "~2.6.1",
+    "jquery": "~2.1.0"
+  },
+  "devDependencies": {
+    "browserify": "~3.32.0"
+  }
+}
