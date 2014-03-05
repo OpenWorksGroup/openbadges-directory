@@ -72,9 +72,7 @@ describe('Search', function () {
 
     it('get by location', function (done) {
       search.get('http://www.no-reply.com/12', function (err, result) {
-        result.length.should.equal(20202);
-        console.log(result);
-
+        result.location.should.equal('http://www.no-reply.com/12');
         done(err);
       });
     });
