@@ -18,6 +18,11 @@ var BadgeClass = Model.define({
     tags: ['array'],
     _indexed_at: ['number']
   },
+  derived: {
+    tagNames: function () {
+      return (this.tags || []).join(', ');
+    }
+  },
   initialize: function (options) {
     this.instanceUrl = options.url;
   },
@@ -41,7 +46,9 @@ var BadgeClasses = Collection.extend({
 var ItemView = View.extend({
   template: $('#class-row').html(),
   textBindings: {
-    location: '.js-location'
+    location: '.js-location',
+    name: '.js-name',
+    tagNames: '.js-tags'
   },
   srcBindings: {
     image: '.js-badge-image'
@@ -65,21 +72,36 @@ module.exports = {
   SearchView: View.extend({
     template: $('#search').html(),
     events: {
-      'keyup': 'search'
+      'keyup': 'search',
+      'change': 'search'
+    },
+    initialize: function () {
+      this.badges = new BadgeClasses({ url: 'http://localhost:3000/search' });
+      this.badges.fetch();
     },
     render: function () {
-      this.badges = new BadgeClasses({ url: 'http://localhost:3000/search' });
       this.renderAndBind();
       this.renderSubview(new ResultView({collection: this.badges}), '.result');
       return this;
     },
     search: function () {
-      var values = this.$('input[id=tags],input[id=q]'),
+      var byLocation = this.$('input[id=location]');
+      var tags   = this.$('input[id=tags]').val(),
+          q      = this.$('input[id=q]').val(),
+          page   = this.$('select[id=page] option:selected').val(),
+          limit  = this.$('select[id=limit] option:selected').val(),
           data   = {data: {}};
-      values.each(function (i, el) {
-        data.data[el.id] = $(el).val();
-      });
-      this.badges.fetch(data);
+      q && (data.data['q'] = q);
+      tags && (data.data['tags'] = tags);
+      limit && (data.data['limit'] = limit);
+      page && (data.data['page'] = page);
+      if (byLocation.val()) {
+        this.badges.instanceUrl = 'http://localhost:3000/' + encodeURIComponent(byLocation.val());
+        this.badges.fetch();
+      } else {
+        this.badges.instanceUrl = 'http://localhost:3000/search';
+        this.badges.fetch(data);
+      }
     }
   })
 };
