@@ -1,8 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+  <style>
+    body {
+      font-family: Sans-serif;
+    }
+    .badge {
+      float: left;
+      list-style: none;
+      padding: 20px;
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 200px;
+      /*clear: left;*/
+    }
+    #location { width: 350px; }
+  </style>
+</head>
 <body>
+  <script type="text/template" id="search">
+    <div id="api">
+      <input type="search" value="" id="tags" placeholder="Tags"/>
+      <input type="search" value="" id="q" placeholder="Search"/>
+      <input type="search" value="" id="location" placeholder="Badge Class Url"/>
+      <div>
+        Limit
+        <select id="limit"><option value="5">5</option><option value="10">10</option><option value="15">15</option></select>
+      </div>
+      <div>
+        Page
+        <select id="page">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="result">
 
+      </div>
+    </div>
+  </script>
+  <script type="text/template" id="class-row">
+    <li class="badge">
+      <img class="js-badge-image"></img>
+      <div><strong>Name: </strong><span class="js-name"></span></div>
+      <div><strong>Tags: </strong><span class="js-tags"></span></div>
+      <div><strong>Location: </strong><span class="js-location"></span></div>
+    </li>
+  </script>
+
+
+
+  <script type="text/javascript" src="jquery.min.js"></script>
   <script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>
