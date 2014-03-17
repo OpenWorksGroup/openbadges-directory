@@ -72,6 +72,29 @@ Returns a specific badge class, based on the location url (encoded).
       }
     }
 
+## Trying the examples
+
+There is an examples folder with a version of the service being proxied for a web client and a simple usecase of a
+server-side directory client.
+
+To setup:
+
+    cd examples
+    npm install
+    npm run-script browserify
+
+To run the client (from the examples folder):
+
+    npm run-script client
+    npm run-script server
+    #login to http://localhost:3000/example.html
+
+To run the server example (from the examples folder):
+
+    npm run-script server
+    node server/example
+
+
 ## Approach so far + future
 
 This API is a prototype to both integrate with the initial version of openbadges-discovery (https://github.com/mozilla/openbadges-discovery),
