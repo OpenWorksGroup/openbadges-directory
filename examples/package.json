@@ -3,15 +3,22 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "browserify": "browserify browser/example.js -o browser/bundle.js"
+    "browserify": "browserify browser/example.js -o browser/bundle.js",
+    "gulp": "node_modules/.bin/gulp",
+    "server": "gulp startServer"
   },
   "dependencies": {
     "restler": "~3.2.0",
-    "backbone": "~1.1.2",
+    "backbone": "1.0.0",
     "human-model": "~2.6.1",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "human-view": "~1.7.0"
   },
   "devDependencies": {
-    "browserify": "~3.32.0"
+    "browserify": "~3.32.0",
+    "connect-modrewrite": "~0.6.4-pre",
+    "http-proxy": "~1.0.2",
+    "express": "~3.4.8",
+    "gulp": "~3.5.6"
   }
 }

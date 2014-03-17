@@ -2,8 +2,10 @@
   "name": "directory-api",
   "version": "0.1.0",
   "scripts": {
+    "start": "node app.js",
     "gulp": "node_modules/.bin/gulp",
-    "start": "node app.js"
+    "example-server": "node examples/start-server | node examples/server/example",
+    "example-client": ""
   },
   "dependencies": {
     "lunr": "~0.4.3",

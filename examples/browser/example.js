@@ -1,8 +1,6 @@
 'use strict';
 
-var client       = require('./client'),
-    BadgeClass   = client.BadgeClass,
-    BadgeClasses = client.BadgeClasses;
+var client       = require('./client');
+document.body.appendChild(new client.SearchView().render().el);
 
-new BadgeClass({ url: 'http://localhost:3000' }).fetch();
-new BadgeClasses({ url: 'http://localhost:3000' }).fetch();
+//console.log(badge.toJSON(), badges.toJSON());

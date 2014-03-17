@@ -1,4 +1,10 @@
-var rest     = require('restler');
+var rest = require('restler'),
+    util = require('../../lib/util');
+
+var parsePagination = function (options) {
+
+
+}
 
 //TODO once there are error codes returned, we'll want to use the statusCode
 //  on('complete', function (result, response) {
@@ -7,14 +13,26 @@ var Client = module.exports = function (options) {
   this.endpoint = options.endpoint;
   this.limit = options.limit || 10;
 };
+Client.prototype._pagingQuery = function (options) {
+  options = options || {};
+  var query = {},
+      limit = options.limit || this.limit;
+  if (options.page) {
+    query.page = options.page;
+  }
+  if (limit) {
+    query.limit = limit;
+  }
+  return query;
+};
 
 /**
  * Accepts an object of search criteria, and returns either an error, or an array of badge classes.
  * Allowable search criteria are:
  * {
-   *   search: string,
-   *   tags: array
-   * }
+ *   search: string,
+ *   tags: array
+ * }
  * @param criteria object criteria you are search on (search / tags)
  * @param callback function with a signature of (Error, Array)
  * @returns {*}
@@ -23,17 +41,18 @@ Client.prototype.search = function (criteria, callback) {
   criteria = criteria || {};
   var tags   = criteria.tags && criteria.tags.join(','),
       q      = criteria.search,
-      search = [];
+      paging = this._pagingQuery(criteria),
+      query  = {};
   if (tags) {
-    search.push('tags=' + tags);
+    query.tags = tags;
   }
   if (q) {
-    search.push('q=' + q);
+    query.q = q;
   }
-  if (!search.length) {
+  if (!Object.keys(query).length) {
     return callback(new Error('You must supply search criteria in the form of a "tags" array, or "search" string'));
   }
-  rest.get(this.endpoint + '/search?' + search.join('&')).on('complete', function (result, response) {
+  rest.get(this.endpoint + '/search', { query: {}}).on('complete', function (result, response) {
     if (result instanceof Error) {
       return callback(result);
     }
@@ -62,6 +81,7 @@ Client.prototype.getByLocation = function (location, callback) {
  * @param callback function with a signature of (Error, Object)
  */
 Client.prototype.recent = function (options, callback) {
+  var page = (options && options.page) || 0;
   rest.get(this.endpoint + '/recent').on('complete', function (result) {
     if (result instanceof Error) {
       return callback(result);
