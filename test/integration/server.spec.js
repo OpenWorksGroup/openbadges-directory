@@ -24,16 +24,11 @@ var isSorted = function (list) {
 
 describe('Search API', function () {
   describe('/search', function () {
-    it('should return the first 10 results', function (done) {
+    it('should fail without query params', function (done) {
       client.get('/search', function (err, req, res, data) {
-        data.data.length.should.equal(10);
-        done();
-      });
-    });
-
-    it('returns results by recency if no search criteria are specified', function (done) {
-      client.get('/search', function (err, req, res, data) {
-        isSorted(data.data).should.equal(true);
+        if (!err || err.statusCode !== 400) {
+          return done(new Error('Search without query params should fail'));
+        }
         done();
       });
     });
@@ -86,6 +81,14 @@ describe('Search API', function () {
     it('should allow getting a badge the badge url', function (done) {
       client.get('/' + encodeURIComponent('http://www.no-reply.com/12'), function (err, req, res, data) {
         data.data.location.should.equal('http://www.no-reply.com/12');
+        done();
+      });
+    });
+    it('should return a 404 if no result is found', function (done) {
+      client.get('/' + encodeURIComponent('http://www.no-reply.com/bogusbadge'), function (err, req, res, data) {
+        if (!err || err.statusCode !== 404) {
+          return done(new Error('Getting by an invalid location should fail'));
+        }
         done();
       });
     });
