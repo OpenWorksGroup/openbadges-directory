@@ -12,7 +12,8 @@
     "nedb": "~0.10.0",
     "event-stream": "~3.1.0",
     "restify": "~2.6.1",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "bunyan": "~0.22.1"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
@@ -21,7 +22,8 @@
     "gulp-watch": "~0.5.0",
     "gulp-mocha": "~0.4.1",
     "mocha": "~1.17.1",
-    "should": "~3.1.2"
+    "should": "~3.1.2",
+    "async": "~0.2.10"
   },
   "engines": {
     "node": ">=0.10"

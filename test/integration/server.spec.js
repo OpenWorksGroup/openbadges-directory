@@ -6,7 +6,10 @@ var restify = require('restify'),
     client  = restify.createJSONClient({
       version: '*',
       url: 'http://localhost:9000'
-    });
+    }),
+    async = require('async');
+client.basicAuth('TEST_API_KEY', '');
+
 var isSorted = function (list) {
   var sorted = true,
       last;
@@ -86,5 +89,31 @@ describe('Search API', function () {
         done();
       });
     });
+  });
+
+  describe('verify the api key', function () {
+    var apiClient = restify.createJSONClient({
+      version: '*',
+      url: 'http://localhost:9000'
+    });
+
+    it('should block all api calls without a key', function (done) {
+      async.each([
+        '/' + encodeURIComponent('http://www.no-reply.com/12'),
+        '/recent',
+        '/search?tags=MOOC3,Badges'
+      ], function (url, callback) {
+        apiClient.get(url, function (err) {
+          if (!err) {
+            return callback(new Error('All api calls without a key should fail'));
+          }
+          err.message.should.equal('API Key required');
+          err.statusCode.should.equal(401);
+          callback();
+        });
+      }, function (err) {
+        done(err);
+      })
+    })
   });
 });

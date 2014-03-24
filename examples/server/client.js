@@ -12,6 +12,7 @@ var parsePagination = function (options) {
 var Client = module.exports = function (options) {
   this.endpoint = options.endpoint;
   this.limit = options.limit || 10;
+  this.apiKey = options.apiKey;
 };
 Client.prototype._pagingQuery = function (options) {
   options = options || {};
@@ -52,8 +53,8 @@ Client.prototype.search = function (criteria, callback) {
   if (!Object.keys(query).length) {
     return callback(new Error('You must supply search criteria in the form of a "tags" array, or "search" string'));
   }
-  rest.get(this.endpoint + '/search', { query: {}}).on('complete', function (result, response) {
-    if (result instanceof Error) {
+  rest.get(this.endpoint + '/search', { username: this.apiKey, password: '', query: {}}).on('complete', function (result, response) {
+    if (result instanceof Error || result.code) {
       return callback(result);
     }
     return callback(null, result.data);
@@ -67,8 +68,8 @@ Client.prototype.search = function (criteria, callback) {
  */
 Client.prototype.getByLocation = function (location, callback) {
   var encodedLocation = encodeURIComponent(location);
-  rest.get(this.endpoint + '/' + encodedLocation).on('complete', function (result) {
-    if (result instanceof Error) {
+  rest.get(this.endpoint + '/' + encodedLocation, { username: this.apiKey, password: ''  }).on('complete', function (result) {
+    if (result instanceof Error || result.code) {
       return callback(result);
     }
     return callback(null, result.data);
@@ -82,8 +83,8 @@ Client.prototype.getByLocation = function (location, callback) {
  */
 Client.prototype.recent = function (options, callback) {
   var page = (options && options.page) || 0;
-  rest.get(this.endpoint + '/recent').on('complete', function (result) {
-    if (result instanceof Error) {
+  rest.get(this.endpoint + '/recent', { username: this.apiKey, password: '' }).on('complete', function (result) {
+    if (result instanceof Error || result.code) {
       return callback(result);
     }
     return callback(null, result.data);
