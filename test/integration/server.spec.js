@@ -6,7 +6,10 @@ var restify = require('restify'),
     client  = restify.createJSONClient({
       version: '*',
       url: 'http://localhost:9000'
-    });
+    }),
+    async = require('async');
+client.basicAuth('TEST_API_KEY', '');
+
 var isSorted = function (list) {
   var sorted = true,
       last;
@@ -21,16 +24,11 @@ var isSorted = function (list) {
 
 describe('Search API', function () {
   describe('/search', function () {
-    it('should return the first 10 results', function (done) {
+    it('should fail without query params', function (done) {
       client.get('/search', function (err, req, res, data) {
-        data.data.length.should.equal(10);
-        done();
-      });
-    });
-
-    it('returns results by recency if no search criteria are specified', function (done) {
-      client.get('/search', function (err, req, res, data) {
-        isSorted(data.data).should.equal(true);
+        if (!err || err.statusCode !== 400) {
+          return done(new Error('Search without query params should fail'));
+        }
         done();
       });
     });
@@ -86,5 +84,39 @@ describe('Search API', function () {
         done();
       });
     });
+    it('should return a 404 if no result is found', function (done) {
+      client.get('/' + encodeURIComponent('http://www.no-reply.com/bogusbadge'), function (err, req, res, data) {
+        if (!err || err.statusCode !== 404) {
+          return done(new Error('Getting by an invalid location should fail'));
+        }
+        done();
+      });
+    });
+  });
+
+  describe('verify the api key', function () {
+    var apiClient = restify.createJSONClient({
+      version: '*',
+      url: 'http://localhost:9000'
+    });
+
+    it('should block all api calls without a key', function (done) {
+      async.each([
+        '/' + encodeURIComponent('http://www.no-reply.com/12'),
+        '/recent',
+        '/search?tags=MOOC3,Badges'
+      ], function (url, callback) {
+        apiClient.get(url, function (err) {
+          if (!err) {
+            return callback(new Error('All api calls without a key should fail'));
+          }
+          err.message.should.equal('API Key required');
+          err.statusCode.should.equal(401);
+          callback();
+        });
+      }, function (err) {
+        done(err);
+      })
+    })
   });
 });

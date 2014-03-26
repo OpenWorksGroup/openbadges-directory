@@ -20,6 +20,7 @@ Mostly don't need environment variables at the moment, but if you don't want to 
 located in the project itself, you can set the BADGE_STORE environment variable. It should
 
     BADGE_STORE                             #full path to a JSON file of newline separated JSON objects
+    API_KEY                                 #temporarily hard-coded api key for clients to use to hit the directory.
 
 ## API
 

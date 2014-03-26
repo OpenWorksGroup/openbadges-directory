@@ -11,6 +11,10 @@ gulp.task('startServer', function () {
 
   app.use(express.static(__dirname + '/browser'));
   app.use(function (req, res) {
+    //add api key on the proxy, so we don't need to put it in the client code
+    var apiKey = new Buffer('EXAMPLE_API_KEY:', 'ascii');
+    apiKey = apiKey.toString('base64');
+    req.headers.authorization = 'Basic ' + apiKey;
     proxy.web(req, res, { target: 'http://' + host + ':' + proxyPort });
   });
   app.listen(port);

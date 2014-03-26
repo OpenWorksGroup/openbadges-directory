@@ -77,7 +77,10 @@ module.exports = {
     },
     initialize: function () {
       this.badges = new BadgeClasses({ url: 'http://localhost:3000/search' });
-      this.badges.fetch();
+      this.badges.fetch({data: {
+        page: this.$('select[id=page] option:selected').val(),
+        limit: this.$('select[id=limit] option:selected').val()
+      }});
     },
     render: function () {
       this.renderAndBind();

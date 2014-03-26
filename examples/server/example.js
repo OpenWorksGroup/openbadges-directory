@@ -2,7 +2,8 @@ var Client = require('./client');
 
 setTimeout(function () {
   var client = new Client({
-    endpoint: 'http://localhost:9000'
+    endpoint: 'http://localhost:9000',
+    apiKey: 'EXAMPLE_API_KEY'
   });
   client.getByLocation('http://www.no-reply.com/12', function (err, data) {
     if (err) {
