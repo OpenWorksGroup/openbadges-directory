@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Badge Class",
+  "description": "The schema representation of a badge class",
+  "type": "object",
+  "required": ["name", "url"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {
+      "description": "Name of the alignment.",
+      "type": "string"
+    },
+    "url": {
+      "description": "URL linking to the official description of the standard.",
+      "type": "string",
+      "format": "url"
+    },
+    "description": {
+      "description": "Short description of the standard",
+      "type": "string"
+    }
+  }
+}

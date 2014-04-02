@@ -111,3 +111,7 @@ https://github.com/mozilla/openbadges-discussion/issues/8 - badge class extensio
 https://github.com/mozilla/openbadges-directory/issues/3
 https://github.com/mozilla/openbadges-directory/issues/6
 https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for badges/badge classes
+
+# License
+
+[MPL 2.0](http://www.mozilla.org/MPL/2.0/)

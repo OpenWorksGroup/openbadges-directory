@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Badge Class",
+  "description": "The schema representation of a badge class",
+  "type": "object",
+  "required": ["name", "description", "image", "criteria", "issuer"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {
+      "description": "The name of the achievement.",
+      "type": "string"
+    },
+    "description": {
+      "description": "A short description of the achievement.",
+      "type": "string"
+    },
+    "image": {
+      "description": "URL of an image representing the achievement.",
+      "type": "string",
+      "format": "uri"
+    },
+    "criteria": {
+      "description": "URL of the criteria for earning the achievement. If the badge represents an educational achievement, consider marking up this up with LRMI",
+      "type": "string",
+      "format": "uri"
+    },
+    "issuer": {
+      "description": "URL of the organization that issued the badge. Endpoint should be an IssuerOrganization",
+      "type": "string",
+      "format": "uri"
+    },
+    "alignment": {
+      "description": "List of objects describing which educational standards this badge aligns to, if any.",
+      "type": "array",
+      "minItems": 0
+    },
+    "tags": {
+      "description": "List of tags that describe the type of achievement.",
+      "type": "array",
+      "minItems": 0
+    }
+  }
+}
