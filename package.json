@@ -32,7 +32,8 @@
     "gulp-mocha": "~0.4.1",
     "mocha": "~1.17.1",
     "should": "~3.1.2",
-    "async": "~0.2.10"
+    "async": "~0.2.10",
+    "nodemon": "~1.0.17"
   },
   "engines": {
     "node": ">=0.10"

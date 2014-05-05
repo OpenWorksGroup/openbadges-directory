@@ -6,7 +6,7 @@ exports.up = function(db, callback) {
   async.parallel([
     function createListings(parallelCallback) {
       db.createTable('listings', {
-        id: { type: type.INTEGER, primaryKey: 'true' },
+        id: { type: type.INTEGER, primaryKey: 'true', autoIncrement: true },
         badge_class: type.TEXT
       }, parallelCallback);
     },
