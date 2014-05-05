@@ -5,7 +5,7 @@
     "start": "node app.js",
     "gulp": "node_modules/.bin/gulp",
     "example-server": "node examples/start-server | node examples/server/example",
-    "example-client": ""
+    "migrate": "db-migrate up"
   },
   "dependencies": {
     "lunr": "~0.4.3",
@@ -20,7 +20,9 @@
     "googleclientlogin": "~0.2.8",
     "google-spreadsheets": "~0.3.0",
     "config-store": "~0.3.1",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "db-migrate": "~0.6.4",
+    "mysql": "~2.2.0"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
