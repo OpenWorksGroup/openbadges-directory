@@ -30,6 +30,7 @@ If you are trying to load the example store for Discovery you'll need the follow
     GOOGLE_EMAIL
     GOOGLE_PASSWORD
     GOOGLE_KEY
+    URL                                     #The url (protocol, host, port) where your app lives)
 
 ## API
 
