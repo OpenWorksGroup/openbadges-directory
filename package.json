@@ -16,7 +16,11 @@
     "bunyan": "~0.22.1",
     "openbadges-validator": "~0.2.4",
     "streamsql": "~0.8.0",
-    "elasticsearch": "~2.1.4"
+    "elasticsearch": "~2.1.4",
+    "googleclientlogin": "~0.2.8",
+    "google-spreadsheets": "~0.3.0",
+    "config-store": "~0.3.1",
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
