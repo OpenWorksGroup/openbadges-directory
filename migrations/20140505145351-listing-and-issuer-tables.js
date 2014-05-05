@@ -16,6 +16,7 @@ exports.up = function(db, callback) {
         name: type.STRING,
         description: type.STRING,
         endpoint: type.STRING,
+        indexed_at: type.DATE_TIME,
         api_key: type.STRING
       }, parallelCallback);
     }

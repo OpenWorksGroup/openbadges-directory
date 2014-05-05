@@ -4,11 +4,22 @@ var cluster = require('cluster'),
     logger  = require('./lib/logger');
 
 if (cluster.isWorker) {
-  return server();
+  if ('IS_JOB' in process.env) {
+    logger.info('Starting job');
+    return require('./lib/indexer/indexer');
+  } else {
+    return server();
+  }
 }
 
 for (var i = 0; i < os.cpus().length; i++) {
-  cluster.fork();
+  if (os.cpus().length > 1 && i === 0) {
+    cluster.fork({
+      IS_JOB: true
+    });
+  } else {
+    cluster.fork();
+  }
 }
 
 cluster.on('exit', function (worker, code, signal) {
