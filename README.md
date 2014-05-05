@@ -23,6 +23,7 @@ located in the project itself, you can set the BADGE_STORE environment variable.
     BADGE_STORE                             #full path to a JSON file of newline separated JSON objects
     API_KEY                                 #temporarily hard-coded api key for clients to use to hit the directory.
     DATABASE_URL                            #URL to mysql - format is mysql://user:pass@host/database
+    ES_HOST                                 #URL to elasticsearch
 
 If you are trying to load the example store for Discovery you'll need the following
 
