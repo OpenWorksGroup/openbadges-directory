@@ -24,7 +24,7 @@
     "db-migrate": "~0.6.4",
     "mysql": "~2.2.0",
     "async": "~0.8.0",
-    "restler": "~3.2.2"
+    "request": "~2.34.0"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
