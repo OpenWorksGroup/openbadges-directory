@@ -84,6 +84,23 @@ Returns a specific badge class, based on the location url (encoded).
       }
     }
 
+## curl'ing the api
+
+    curl http://localhost:9000/recent
+
+    #get by searching all
+    curl http://localhost:9000/search?q=better
+
+    #get by searching tags
+    curl http://localhost:9000/search?tags=skill
+
+    #get by searching all w/ tags filter
+    curl http://localhost:9000/search?tags=skill,doer&q=better
+
+    #get by badge location
+    curl http://localhost:9000/http%3A%2F%2Flocalhost%3A9000%2Ftemp%2Fdiscovery%2Flisting%2F837
+
+
 ## Trying the examples
 
 There is an examples folder with a version of the service being proxied for a web client and a simple usecase of a
@@ -126,7 +143,3 @@ https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for ba
 # License
 
 [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
-
-Get the status of the index
-
-    curl http://localhost:9200/badge_classes/_status
