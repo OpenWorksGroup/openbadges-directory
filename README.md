@@ -126,3 +126,7 @@ https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for ba
 # License
 
 [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
+
+Get the status of the index
+
+    curl http://localhost:9200/badge_classes/_status

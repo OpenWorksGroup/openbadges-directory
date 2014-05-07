@@ -17,6 +17,15 @@ exports.up = function(db, callback) {
         description: type.STRING,
         endpoint: type.STRING,
         indexed_at: type.DATE_TIME,
+        contact_email: type.STRING
+      }, parallelCallback);
+    },
+    function createApiKeys(parallelCallback) {
+      db.createTable('api_keys', {
+        id: { type: type.INTEGER, primaryKey: 'true' },
+        name: type.STRING,
+        description: type.STRING,
+        website: type.STRING,
         api_key: type.STRING
       }, parallelCallback);
     }
