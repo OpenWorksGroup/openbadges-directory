@@ -23,14 +23,15 @@ located in the project itself, you can set the BADGE_STORE environment variable.
     BADGE_STORE                             #full path to a JSON file of newline separated JSON objects
     API_KEY                                 #temporarily hard-coded api key for clients to use to hit the directory.
     DATABASE_URL                            #URL to mysql - format is mysql://user:pass@host/database
-    ES_HOST                                 #URL to elasticsearch
+    ES_HOST                                 #(optional) URL to elasticsearch. Defaults to http://localhost:9200
+    INDEX_INTERVAL                          #(optional) Interval for indexing issuers in milliseconds. Defaults to 60 seconds.
 
 If you are trying to load the example store for Discovery you'll need the following
 
     GOOGLE_EMAIL
     GOOGLE_PASSWORD
     GOOGLE_KEY
-    URL                                     #The url (protocol, host, port) where your app lives)
+    URL                                     #The url (protocol, host, port) where your app lives
 
 ## API
 
