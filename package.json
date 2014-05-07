@@ -5,7 +5,7 @@
     "start": "node app.js",
     "gulp": "node_modules/.bin/gulp",
     "example-server": "node examples/start-server | node examples/server/example",
-    "example-client": ""
+    "migrate": "db-migrate up"
   },
   "dependencies": {
     "lunr": "~0.4.3",
@@ -13,7 +13,18 @@
     "event-stream": "~3.1.0",
     "restify": "~2.6.1",
     "lodash": "~2.4.1",
-    "bunyan": "~0.22.1"
+    "bunyan": "~0.22.1",
+    "openbadges-validator": "~0.2.4",
+    "streamsql": "~0.8.0",
+    "elasticsearch": "~2.1.4",
+    "googleclientlogin": "~0.2.8",
+    "google-spreadsheets": "~0.3.0",
+    "config-store": "~0.3.1",
+    "underscore": "~1.6.0",
+    "db-migrate": "~0.6.4",
+    "mysql": "~2.2.0",
+    "async": "~0.8.0",
+    "request": "~2.34.0"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
@@ -23,7 +34,8 @@
     "gulp-mocha": "~0.4.1",
     "mocha": "~1.17.1",
     "should": "~3.1.2",
-    "async": "~0.2.10"
+    "async": "~0.2.10",
+    "nodemon": "~1.0.17"
   },
   "engines": {
     "node": ">=0.10"

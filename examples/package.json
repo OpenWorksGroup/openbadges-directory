@@ -13,7 +13,8 @@
     "backbone": "1.0.0",
     "human-model": "~2.6.1",
     "jquery": "~2.1.0",
-    "human-view": "~1.7.0"
+    "human-view": "~1.7.0",
+    "openbadges-directory-client": "git://github.com/jpcamara/openbadges-directory-client.git"
   },
   "devDependencies": {
     "browserify": "~3.32.0",

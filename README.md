@@ -6,13 +6,14 @@ Directory for searching available badges.
 ## Quick Start
 
     npm install
-    npm run gulp                            #runs jshint, mocha, and then starts a watch process
-    npm start                               #starts the actual search process
+    npm run gulp                             #runs jshint, mocha, and then starts a watch process
+    DATABASE_URL=... npm run-scripts migrate #creates the database tables needed for directory
+    npm start                                #starts the actual search process
 
-    node_modules/.bin/gulp test             #run tests
-    node_modules/.bin/gulp integrationTest  #run integration tests (starts the api and makes calls against it)
-    node_modules/.bin/gulp lint             #run linter
-    node_modules/.bin/gulp watch            #watch
+    node_modules/.bin/gulp test              #run tests
+    node_modules/.bin/gulp integrationTest   #run integration tests (starts the api and makes calls against it)
+    node_modules/.bin/gulp lint              #run linter
+    node_modules/.bin/gulp watch             #watch
 
 ## Environment Variables
 
@@ -21,6 +22,16 @@ located in the project itself, you can set the BADGE_STORE environment variable.
 
     BADGE_STORE                             #full path to a JSON file of newline separated JSON objects
     API_KEY                                 #temporarily hard-coded api key for clients to use to hit the directory.
+    DATABASE_URL                            #URL to mysql - format is mysql://user:pass@host/database
+    ES_HOST                                 #(optional) URL to elasticsearch. Defaults to http://localhost:9200
+    INDEX_INTERVAL                          #(optional) Interval for indexing issuers in milliseconds. Defaults to 60 seconds.
+
+If you are trying to load the example store for Discovery you'll need the following
+
+    GOOGLE_EMAIL
+    GOOGLE_PASSWORD
+    GOOGLE_KEY
+    URL                                     #The url (protocol, host, port) where your app lives
 
 ## API
 
@@ -73,6 +84,23 @@ Returns a specific badge class, based on the location url (encoded).
       }
     }
 
+## curl'ing the api
+
+    curl http://localhost:9000/recent
+
+    #get by searching all
+    curl http://localhost:9000/search?q=better
+
+    #get by searching tags
+    curl http://localhost:9000/search?tags=skill
+
+    #get by searching all w/ tags filter
+    curl http://localhost:9000/search?tags=skill,doer&q=better
+
+    #get by badge location
+    curl http://localhost:9000/http%3A%2F%2Flocalhost%3A9000%2Ftemp%2Fdiscovery%2Flisting%2F837
+
+
 ## Trying the examples
 
 There is an examples folder with a version of the service being proxied for a web client and a simple usecase of a
@@ -111,3 +139,7 @@ https://github.com/mozilla/openbadges-discussion/issues/8 - badge class extensio
 https://github.com/mozilla/openbadges-directory/issues/3
 https://github.com/mozilla/openbadges-directory/issues/6
 https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for badges/badge classes
+
+# License
+
+[MPL 2.0](http://www.mozilla.org/MPL/2.0/)
