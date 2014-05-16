@@ -1,59 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="directory">
 <head>
-  <style>
-    body {
-      font-family: Sans-serif;
-    }
-    .badge {
-      float: left;
-      list-style: none;
-      padding: 20px;
-      min-width: 300px;
-      max-width: 300px;
-      min-height: 200px;
-      /*clear: left;*/
-    }
-    #location { width: 350px; }
-  </style>
+  <link rel="stylesheet" type="text/css" href="/examples/browser/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/examples/browser/css/app.css"/>
 </head>
-<body>
-  <script type="text/template" id="search">
-    <div id="api">
-      <input type="search" value="" id="tags" placeholder="Tags"/>
-      <input type="search" value="" id="q" placeholder="Search"/>
-      <input type="search" value="" id="location" placeholder="Badge Class Url"/>
-      <div>
-        Limit
-        <select id="limit"><option value="5">5</option><option value="10">10</option><option value="15">15</option></select>
+<body ng-controller="DirectoryController">
+  <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Directory</a>
       </div>
-      <div>
-        Page
-        <select id="page">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div class="result">
-
+      <div class="navbar-collapse collapse" id="navbar-collapsible">
+        <ul class="nav navbar-nav navbar-left">
+          <li ng-class="{active: isActive('/recent')}"><a href="#/recent">Recent</a></li>
+          <li ng-class="{active: isActive('/get')}"><a href="#/get">Get</a></li>
+          <li ng-class="{active: isActive('/search')}"><a href="#/search">Search</a></li>
+          <li>&nbsp;</li>
+        </ul>
+        <form class="navbar-form">
+          <div class="form-group" style="display:inline;">
+            <div class="input-group">
+              <div class="input-group-btn" dropdown is-open="status.isopen" cancel-click>
+                <button type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled">
+                  Tags <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><input type="text" class="form-control" ng-model="tag" ng-enter="addTagFromForm()"/></li>
+                </ul>
+              </div>
+              <input ng-disabled="disabled" type="text" class="form-control" placeholder="{{placeholder}}" ng-model="search">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </script>
-  <script type="text/template" id="class-row">
-    <li class="badge">
-      <img class="js-badge-image"></img>
-      <div><strong>Name: </strong><span class="js-name"></span></div>
-      <div><strong>Tags: </strong><span class="js-tags"></span></div>
-      <div><strong>Location: </strong><span class="js-location"></span></div>
-    </li>
-  </script>
-
-
-
-  <script type="text/javascript" src="jquery.min.js"></script>
-  <script type="text/javascript" src="bundle.js"></script>
+  </nav>
+  <div ng-view></div>
+  <script src="/examples/browser/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/examples/browser/bower_components/angular/angular.js"></script>
+  <script src="/examples/browser/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="/examples/browser/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <script src="/examples/browser/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="/examples/browser/js/app.js"></script>
+  <script src="/examples/browser/js/controllers.js"></script>
 </body>
 </html>
