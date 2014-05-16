@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 node_modules
+bower_components
 config.json
 npm-debug.log
 

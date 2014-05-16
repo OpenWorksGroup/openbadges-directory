@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="directory">
 <head>
-  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-  <script src="vendor/angular/angular.min.js"></script>
+  <div ng-view></div>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
