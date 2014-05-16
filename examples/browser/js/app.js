@@ -5,12 +5,24 @@ app.config([
   '$routeProvider',
   function ($routeProvider) {
     $routeProvider.
-      when('/badges', {
+      when('/recent', {
         templateUrl: 'js/partials/badge-list.html',
-        controller: 'DirectoryController'
+        controller: 'RecentController'
+      }).
+      when('/search', {
+        templateUrl: 'js/partials/badge-list.html',
+        controller: 'SearchController'
+      }).
+      when('/get', {
+        templateUrl: 'js/partials/badge-list.html',
+        controller: 'GetController'
+      }).
+      when('/badge-class/:id', {
+        templateUrl: 'js/partials/badge-class.html',
+        controller: 'GetController'
       }).
       otherwise({
-        redirectTo: '/badges'
+        redirectTo: '/recent'
       })
   }
 ]);
