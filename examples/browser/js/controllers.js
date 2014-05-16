@@ -56,14 +56,29 @@ directoryControllers.controller('GetController', ['$scope', '$http', function ($
 
 directoryControllers.controller('SearchController', ['$scope', '$http', function ($scope, $http) {
   $scope.$parent.searchOn('What are searching for?');
+  $scope.tags = [];
+  $scope.removeTag = function (index) {
+    $scope.tags.splice(index, 1);
+  };
+  $scope.addTag = function (badge, index) {
+    var tags = badge.tags;
+    if ($scope.tags.indexOf(tags[index]) === -1) {
+      $scope.tags.push(tags[index]);
+    }
+  };
 
   var page = 0,
       done = false;
   $scope.nextPage = function () {
-    if (!$scope.search) { return; }
+    if (!$scope.search && !$scope.tags.length) { return; }
     if (done) { return; }
     page++;
-    $http.get('/search?q=' + encodeURIComponent($scope.search) + '&page=' + page).success(function (response) {
+
+    var query = [];
+    if ($scope.search) { query.push('q=' + encodeURIComponent($scope.search)); }
+    if ($scope.tags.length) { query.push('tags=' + $scope.tags.join(',')); }
+
+    $http.get('/search?page=' + page + (query.length ? '&' + query.join('&') : '')).success(function (response) {
       if (!response.data.length) { done = true; }
       if ($scope.badges && $scope.badges.length) {
         response.data.forEach(function (item) { $scope.badges.push(item); });
@@ -76,8 +91,14 @@ directoryControllers.controller('SearchController', ['$scope', '$http', function
   $scope.$watch('search', function () {
     if (!$scope.search) { return; }
     page = 0;
-    $scope.badges = [];
     done = false;
+    $scope.badges = [];
     $scope.nextPage();
   });
+  $scope.$watch('tags', function () {
+    page = 0;
+    done = false;
+    $scope.badges = [];
+    $scope.nextPage();
+  }, true);
 }]);
