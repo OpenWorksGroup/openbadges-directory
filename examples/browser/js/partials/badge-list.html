@@ -1,4 +1,19 @@
 <div class="badge-list">
-  <span>{{search}}</span>
-  Ok
+  <div class="badge-page"
+       infinite-scroll="pager()"
+       infinite-scroll-disabled="busy"
+       infinite-scroll-distance="3" class="row">
+    <div class="col-med-4 col-sm-3" ng-repeat="badge in badges">
+      <div class="badge">
+        <div class="display-block bg-gray inner text-center text-inverse">
+          <img src="{{badge.image}}"/>
+        </div>
+        <div class="text-center inner">
+          <a href="/main/courses/2" class="strong">{{badge.name}}</a>
+          <div><small class="text-center" style="color: gray;">{{badge._directory._location}}</small></div>
+        </div>
+        <div class="text-inverse" style="word-wrap: break-word; white-space: pre-wrap;">{{badge.description}}</div>
+      </div>
+    </div>
+  </div>
 </div>

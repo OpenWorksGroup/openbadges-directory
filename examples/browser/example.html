@@ -36,7 +36,7 @@
                   <li><a href="#">Category 5</a></li>
                 </ul>
               </div>
-              <input ng-disabled="disabled" type="text" class="form-control" placeholder="What are searching for?" ng-model="search">
+              <input ng-disabled="disabled" type="text" class="form-control" placeholder="{{placeholder}}" ng-model="search">
               <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
             </div>
           </div>
@@ -45,8 +45,10 @@
     </div>
   </nav>
   <div ng-view></div>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
 </body>

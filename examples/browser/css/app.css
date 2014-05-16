@@ -94,5 +94,35 @@ footer .nav>li>a:hover {
 }
 
 .badge-list {
-  margin-top: 50px;
+  margin-top: 60px;
+}
+
+.badge {
+  background: #ffffff;
+  margin: 0 auto 15px;
+  position: relative;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 3px 0 0 #dbdbdb;
+  -moz-box-shadow: 0 3px 0 0 #dbdbdb;
+  -webkit-box-shadow: 0 3px 0 0 #dbdbdb;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.bg-gray {
+  background-color: #f9f9f9 !important;
+}
+.inner {
+  padding: 15px;
+  position: relative;
+}
+.text-inverse {
+  color: #45484d;
+}
+.strong {
+  font-weight: bold;
+}
+.text-center {
+  text-align: center !important;
 }
