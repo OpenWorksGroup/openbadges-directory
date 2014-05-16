@@ -20,6 +20,9 @@ directoryControllers.controller('DirectoryController', ['$scope', '$location', f
   $scope.isActive = function (path) {
     return $location.path().substr(0, path.length) == path;
   };
+  $scope.addTagFromForm = function () {
+    $scope.tagEnter = $scope.tagEnter == null ? true : !$scope.tagEnter;
+  };
 }]);
 
 directoryControllers.controller('RecentController', ['$scope', '$http', function ($scope, $http) {
@@ -56,6 +59,7 @@ directoryControllers.controller('GetController', ['$scope', '$http', function ($
 
 directoryControllers.controller('SearchController', ['$scope', '$http', function ($scope, $http) {
   $scope.$parent.searchOn('What are searching for?');
+  $scope.tag = '';
   $scope.tags = [];
   $scope.removeTag = function (index) {
     $scope.tags.splice(index, 1);
@@ -66,6 +70,7 @@ directoryControllers.controller('SearchController', ['$scope', '$http', function
       $scope.tags.push(tags[index]);
     }
   };
+
 
   var page = 0,
       done = false;
@@ -101,4 +106,13 @@ directoryControllers.controller('SearchController', ['$scope', '$http', function
     $scope.badges = [];
     $scope.nextPage();
   }, true);
+  $scope.$parent.$watch('tagEnter', function () {
+    if (!$scope.$parent.tag) {
+      return;
+    }
+    if ($scope.tags.indexOf($scope.$parent.tag) === -1) {
+      $scope.tags.push($scope.$parent.tag);
+    }
+    $scope.$parent.tag = '';
+  });
 }]);

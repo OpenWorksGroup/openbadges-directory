@@ -26,12 +26,12 @@
         <form class="navbar-form">
           <div class="form-group" style="display:inline;">
             <div class="input-group">
-              <div class="input-group-btn" dropdown is-open="status.isopen">
+              <div class="input-group-btn" dropdown is-open="status.isopen" cancel-click>
                 <button type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled">
                   Tags <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                  <li><input type="text" class="form-control"/></li>
+                  <li><input type="text" class="form-control" ng-model="tag" ng-enter="addTagFromForm()"/></li>
                 </ul>
               </div>
               <input ng-disabled="disabled" type="text" class="form-control" placeholder="{{placeholder}}" ng-model="search">
