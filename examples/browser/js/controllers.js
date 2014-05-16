@@ -6,7 +6,10 @@ var directoryControllers = angular.module('directoryControllers', []),
       return true;
     };
 
-directoryControllers.controller('DirectoryController', ['$scope', '$location', function ($scope, $location) {
+directoryControllers.controller('DirectoryController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+//   $http.defaults.headers.common = {"Access-Control-Request-Headers": "accept, origin, authorization"};
+   $http.defaults.headers.common = {'Authorization': 'Basic MTIzNDU2Nw=='};
+
   $scope.searchOn = function (placeholder) {
     $scope.search = '';
     $scope.placeholder = placeholder;
