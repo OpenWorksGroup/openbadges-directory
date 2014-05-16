@@ -20,14 +20,28 @@ directoryControllers.controller('DirectoryController', ['$scope', '$location', f
   $scope.isActive = function (path) {
     return $location.path().substr(0, path.length) == path;
   };
-  $scope.pager = function () {};
 }]);
 
 directoryControllers.controller('RecentController', ['$scope', '$http', function ($scope, $http) {
   $scope.$parent.searchOff('Search not supported for Recent items');
-  $http.get('/recent').success(function (response) {
-    $scope.badges = response.data;
-  });
+
+  var page = 0,
+      done = false;
+  $scope.nextPage = function () {
+    if (done) { return; }
+    page++;
+    if (page > 10) {
+      done = true;
+    }
+    $http.get('/recent?page=' + page).success(function (response) {
+      if (!response.data.length) { done = true; }
+      if ($scope.badges && $scope.badges.length) {
+        response.data.forEach(function (item) { $scope.badges.push(item); });
+      } else {
+        $scope.badges = response.data;
+      }
+    });
+  };
 }]);
 
 directoryControllers.controller('GetController', ['$scope', '$http', function ($scope, $http) {
@@ -42,13 +56,28 @@ directoryControllers.controller('GetController', ['$scope', '$http', function ($
 
 directoryControllers.controller('SearchController', ['$scope', '$http', function ($scope, $http) {
   $scope.$parent.searchOn('What are searching for?');
+
+  var page = 0,
+      done = false;
+  $scope.nextPage = function () {
+    if (!$scope.search) { return; }
+    if (done) { return; }
+    page++;
+    $http.get('/search?q=' + encodeURIComponent($scope.search) + '&page=' + page).success(function (response) {
+      if (!response.data.length) { done = true; }
+      if ($scope.badges && $scope.badges.length) {
+        response.data.forEach(function (item) { $scope.badges.push(item); });
+      } else {
+        $scope.badges = response.data;
+      }
+    });
+  };
+
   $scope.$watch('search', function () {
     if (!$scope.search) { return; }
-    $http.get('/search?q=' + encodeURIComponent($scope.search)).success(function (response) {
-      $scope.badges = response.data;
-    });
+    page = 0;
+    $scope.badges = [];
+    done = false;
+    $scope.nextPage();
   });
 }]);
-//directoryControllers.controller('BadgeClassDetailController', ['$scope', function ($scope) {
-//  $scope.$parent.searchOn();
-//}]);

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('directory', ['ngRoute', 'infinite-scroll', 'directoryControllers']);
+var app = angular.module('directory', ['ngRoute', 'infinite-scroll', 'ui.bootstrap', 'directoryControllers']);
 app.config([
   '$routeProvider',
   function ($routeProvider) {
