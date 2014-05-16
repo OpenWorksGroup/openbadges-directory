@@ -6,19 +6,19 @@ app.config([
   function ($routeProvider) {
     $routeProvider.
       when('/recent', {
-        templateUrl: 'browser/js/partials/badge-list.html',
+        templateUrl: 'js/partials/badge-list.html',
         controller: 'RecentController'
       }).
       when('/search', {
-        templateUrl: 'browser/js/partials/badge-list.html',
+        templateUrl: 'js/partials/badge-list.html',
         controller: 'SearchController'
       }).
       when('/get', {
-        templateUrl: 'browser/js/partials/badge-list.html',
+        templateUrl: 'js/partials/badge-list.html',
         controller: 'GetController'
       }).
       when('/badge-class/:id', {
-        templateUrl: 'browser/js/partials/badge-class.html',
+        templateUrl: 'js/partials/badge-class.html',
         controller: 'GetController'
       }).
       otherwise({
