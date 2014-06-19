@@ -166,5 +166,3 @@ https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for ba
 # License
 
 [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
-
-heroku run DATABASE_URL=mysql://:@localhost/dbname?reconnect=true node_modules/.bin/db-migrate up --app appname
