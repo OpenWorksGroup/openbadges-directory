@@ -23,7 +23,9 @@
     "db-migrate": "~0.6.4",
     "mysql": "~2.2.0",
     "async": "~0.8.0",
-    "request": "~2.34.0"
+    "request": "~2.34.0",
+    "swagger-doc": "~0.2.0",
+    "swagger-node-restify": "~0.1.2"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
