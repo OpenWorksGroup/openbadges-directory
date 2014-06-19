@@ -33,6 +33,29 @@ If you are trying to load the example store for Discovery you'll need the follow
     GOOGLE_KEY
     URL                                     #The url (protocol, host, port) where your app lives
 
+## Project Structure
+
+    /app.js - Starts the cluster
+    /config.json - Contains environment variables for local use (.gitignore'd, see config.json.example for a sample)
+    /gulpfile.js - Build tasks and tests
+    /developers - Contains the api-explorer, the swagger driven ui for interacting with the api directly
+    /examples - Example code for hitting the directory from the browser, and from the server
+    /lib - All of the main project code
+      /api - API endpoint code
+      /engine - 'engines' for indexing with either elasticsearch or lunr (elasticsearch by default, lunr isn't persistent or stable)
+      /indexer - Worker script that indexes the available endpoints using the 'issuer' table
+      /swagger - Swagger setup for the api-explorer
+      /test - Short-term code for parsing the discovery badges
+      /validator - Contains validation code for badge classes
+    /migrations - Contains all of the migrations for the project. Managed using 'db-migrate'
+    /test - Contains all the test (spec) files, written using mocha. Run using gulp (see "Quick Start")
+
+## API Explorer
+
+For an interactive experience with the api, go to /developers/api-explorer. This will load up a swagger powered interface
+that can directly invoke the api. It requires inputting an api key in the top right corner (where there is an input that
+says "api_key") and hitting "Explore".
+
 ## API
 
 All endpoints allow for a limit and page field to modify the number of results returned, and paginate the results.

@@ -3,7 +3,7 @@
        infinite-scroll="nextPage()"
        infinite-scroll-disabled="busy"
        infinite-scroll-distance="3" class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 labels">
       <div class="label label-primary" ng-repeat="tag in tags" ng-click="removeTag($index)" style="cursor: pointer;"><span>&times;</span> #{{tag}}</div>
     </div>
     <div class="col-med-4 col-sm-3" ng-repeat="badge in badges">
