@@ -21,7 +21,6 @@ Mostly don't need environment variables at the moment, but if you don't want to 
 located in the project itself, you can set the BADGE_STORE environment variable. It should
 
     BADGE_STORE                             #full path to a JSON file of newline separated JSON objects
-    API_KEY                                 #temporarily hard-coded api key for clients to use to hit the directory.
     DATABASE_URL                            #URL to mysql - format is mysql://user:pass@host/database
     ES_HOST                                 #(optional) URL to elasticsearch. Defaults to http://localhost:9200
     INDEX_INTERVAL                          #(optional) Interval for indexing issuers in milliseconds. Defaults to 60 seconds.
@@ -53,8 +52,7 @@ If you are trying to load the example store for Discovery you'll need the follow
 ## API Explorer
 
 For an interactive experience with the api, go to /developers/api-explorer. This will load up a swagger powered interface
-that can directly invoke the api. It requires inputting an api key in the top right corner (where there is an input that
-says "api_key") and hitting "Explore".
+that can directly invoke the api.
 
 ## API
 
@@ -107,6 +105,29 @@ Returns a specific badge class, based on the location url (encoded).
       }
     }
 
+### /tags
+
+Returns all tags in the directory, sorted by most popular. This endpoint is not paginated, but does
+accept a 'limit' query.
+
+*Request*
+
+    /tags
+
+*Response*
+
+    {
+      "data": [{
+        "technology": 167
+      }, {
+        "conventional": 109
+      }, {
+        "organizer": 108
+      }, {
+        "doer": 91
+      }]
+    }
+
 ## curl'ing the api
 
     curl http://localhost:9000/recent
@@ -122,6 +143,9 @@ Returns a specific badge class, based on the location url (encoded).
 
     #get by badge location
     curl http://localhost:9000/http%3A%2F%2Flocalhost%3A9000%2Ftemp%2Fdiscovery%2Flisting%2F837
+
+    #get all tags, by popularity
+    curl http://localhost:9000/tags
 
 
 ## Trying the examples
@@ -145,7 +169,6 @@ To run the server example (from the examples folder):
 
     npm run-script server
     node server/example
-
 
 ## Approach so far + future
 
