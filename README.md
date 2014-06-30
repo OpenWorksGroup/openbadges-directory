@@ -1,7 +1,7 @@
 openbadges-directory
 ====================
 
-Directory for searching available badges.
+Directory for searching community badge classes.
 
 ## Quick Start
 
@@ -15,6 +15,19 @@ Directory for searching available badges.
     node_modules/.bin/gulp lint              #run linter
     node_modules/.bin/gulp watch             #watch
 
+[Environment Variables](#env_variables)
+
+[Project Structure](#proj_structure)
+
+[API Explorer](#api_explorer)
+
+[API](#api)
+
+[Curl'ing the API](#curl)
+
+[Trying the examples](#examples)
+
+<a name="env_variables" />
 ## Environment Variables
 
 Mostly don't need environment variables at the moment, but if you don't want to use the dummy badge store
@@ -32,6 +45,7 @@ If you are trying to load the example store for Discovery you'll need the follow
     GOOGLE_KEY
     URL                                     #The url (protocol, host, port) where your app lives
 
+<a name="proj_structure" />
 ## Project Structure
 
     /app.js - Starts the cluster
@@ -49,11 +63,13 @@ If you are trying to load the example store for Discovery you'll need the follow
     /migrations - Contains all of the migrations for the project. Managed using 'db-migrate'
     /test - Contains all the test (spec) files, written using mocha. Run using gulp (see "Quick Start")
 
+<a name="api_explorer" />
 ## API Explorer
 
 For an interactive experience with the api, go to /developers/api-explorer. This will load up a swagger powered interface
 that can directly invoke the api.
 
+<a name="api" />
 ## API
 
 All endpoints allow for a limit and page field to modify the number of results returned, and paginate the results.
@@ -128,6 +144,7 @@ accept a 'limit' query.
       }]
     }
 
+<a name="curl" />
 ## curl'ing the api
 
     curl http://localhost:9000/recent
@@ -147,7 +164,7 @@ accept a 'limit' query.
     #get all tags, by popularity
     curl http://localhost:9000/tags
 
-
+<a name="examples" />
 ## Trying the examples
 
 There is an examples folder with a version of the service being proxied for a web client and a simple usecase of a
