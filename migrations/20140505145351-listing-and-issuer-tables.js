@@ -10,27 +10,33 @@ exports.up = function(db, callback) {
         badge_class: type.TEXT
       }, parallelCallback);
     },
-    function createIssuers(parallelCallback) {
-      db.createTable('issuers', {
-        id: { type: type.INTEGER, primaryKey: 'true' },
+    function createEndpoints(parallelCallback) {
+      db.createTable('endpoints', {
+        id: { type: type.INTEGER, primaryKey: 'true', autoIncrement: true },
         name: type.STRING,
+        organization: type.STRING,
+        website: type.STRING,
         description: type.STRING,
         endpoint: type.STRING,
         indexed_at: type.DATE_TIME,
         contact_email: type.STRING
       }, parallelCallback);
-    },
-    function createApiKeys(parallelCallback) {
-      db.createTable('api_keys', {
-        id: { type: type.INTEGER, primaryKey: 'true' },
-        name: type.STRING,
-        description: type.STRING,
-        website: type.STRING,
-        api_key: type.STRING
-      }, parallelCallback);
     }
+//    function createApiKeys(parallelCallback) {
+//      db.createTable('api_keys', {
+//        id: { type: type.INTEGER, primaryKey: 'true' },
+//        name: type.STRING,
+//        description: type.STRING,
+//        website: type.STRING,
+//        api_key: type.STRING
+//      }, parallelCallback);
+//    }
   ], function complete(error) {
-    callback(error);
+    if (error) {
+      return callback(error);
+    }
+    //create the index so endpoints are unique
+    db.addIndex('endpoints', 'unique_endpoint', 'endpoint', true, callback);
   });
 
 };

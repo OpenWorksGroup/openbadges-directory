@@ -20,7 +20,7 @@ var fork = function (cluster, isJob) {
 
 if (cluster.isWorker) {
   if ('IS_JOB' in process.env) {
-    return require('./lib/indexer/indexer');
+    return require('./lib/indexer');
   } else {
     return server();
   }

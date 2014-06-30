@@ -7,7 +7,7 @@ Directory for searching community badge classes.
 
     npm install
     npm run gulp                             #runs jshint, mocha, and then starts a watch process
-    DATABASE_URL=... npm run-scripts migrate #creates the database tables needed for directory
+    DATABASE_URL=... npm run-script migrate #creates the database tables needed for directory
     npm start                                #starts the actual search process
 
     node_modules/.bin/gulp test              #run tests
@@ -39,6 +39,9 @@ located in the project itself, you can set the BADGE_STORE environment variable.
     DATABASE_URL                            #URL to mysql - format is mysql://user:pass@host/database
     ES_HOST                                 #(optional) URL to elasticsearch. Defaults to http://localhost:9200
     INDEX_INTERVAL                          #(optional) Interval for indexing issuers in milliseconds. Defaults to 60 seconds.
+    EMAIL_SERVICE                           #Uses nodemailer internally, so requires one of the node nodemailer service names (example: 'SendGrid')
+    EMAIL_USER                              #Email service user
+    EMAIL_PASS                              #Email service password
 
 If you are trying to load the example store for Discovery you'll need the following
 

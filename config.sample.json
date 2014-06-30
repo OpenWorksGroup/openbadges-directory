@@ -10,5 +10,9 @@
   "API_KEY": "",
   "ES_HOST": "",
   "INDEX_INTERVAL": "",
-  "QUERY_INTERVAL": ""
+  "QUERY_INTERVAL": "",
+
+  "EMAIL_SERVICE": "SendGrid",
+  "EMAIL_USER": "user",
+  "EMAIL_PASS": "pass"
 }
