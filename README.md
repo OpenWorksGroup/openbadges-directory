@@ -27,6 +27,8 @@ Directory for searching community badge classes.
 
 [Trying the examples](#examples)
 
+[Invalid Badges](#invalid_badges)
+
 <a name="env_variables" />
 ## Environment Variables
 
@@ -186,6 +188,15 @@ To run the server example (from the examples folder):
 
     npm run-script server
     node server/example
+
+<a name="invalid_badges" />
+## Invalid badges
+
+This is not part of the standard API, but if you are hosting the directory and want to get a list of invalid badges, this is
+how you would hit your elastic search instance.
+
+    #get all invalid badges
+    curl -X POST -H "Content-Type: application/json" -d '{"query":{"bool":{"must":[{"term":{"_directory._valid": false}}]}}}' localhost:9200/badge_classes/badge_class/_search?pretty=1&from=0&size=100&sort=_timestamp
 
 ## Approach so far + future
 
