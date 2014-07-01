@@ -25,7 +25,9 @@
     "async": "~0.8.0",
     "request": "~2.34.0",
     "swagger-doc": "~0.2.0",
-    "swagger-node-restify": "~0.1.2"
+    "swagger-node-restify": "~0.1.2",
+    "node-restify-validation": "0.0.7",
+    "nodemailer": "~0.7.0"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
