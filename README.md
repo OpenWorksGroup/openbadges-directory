@@ -15,6 +15,8 @@ Directory for searching community badge classes.
     node_modules/.bin/gulp lint              #run linter
     node_modules/.bin/gulp watch             #watch
 
+[Badge Class Listing Format](#badgelist)
+
 [Environment Variables](#env_variables)
 
 [Project Structure](#proj_structure)
@@ -28,6 +30,64 @@ Directory for searching community badge classes.
 [Trying the examples](#examples)
 
 [Invalid Badges](#invalid_badges)
+
+<a name="badgelist" />
+## Badge Class Listing Format
+
+Currently, to have your badge classes indexed in the directory, you must expose an endpoint that lists the badges
+you want to have indexed. By endpoint, this just means a URL which when accessed returns a JSON message. The message is
+very simple and this is a valid example:
+
+    {
+      "badgelist": [{
+        "location": "http://my-site.com/location-of-badge"
+      }, {
+        "location": "http://my-site.com/location-of-other-badge"
+      }]
+    }
+
+There is a root key called "badgelist", which contains an array of badge class locations. These are objects with a single
+key of "location", pointing to the url where the badge class is hosted. When the directory retrieves a badge listing it
+collects up all of the locations and follows them to their badge class definitions.
+
+For instance, let's say you are a badge issuer called badgetastic and your website is ```http://badgetastic.com```. To participate
+in the directory, you would be expected to expose an endpoint somewhere (on your site or otherwise) that lists all of the
+badges you want indexed from badgetastic. The url is up to you, but assuming you host it on your site and expose the endpoint
+at ```http://badgetastic.com/badgelist``` - hitting that url we would expect to see a listing of badge locations as specified in
+the earlier code snippet. Each of these locations would be expected to lead to a valid badge class. For instance:
+
+    {
+      "badgelist": [{
+        "location": "http://badgetastic.com/badge1"
+      }]
+    }
+
+Would be expected to have a valid badge class listing at ```http://badgetastic.com/badge1```:
+
+    http://badgetastic.com/badge1
+    {
+      "name": "Badge 1!",
+      "description": "You speak computers and you can use them too.",
+      "image": "https://dl.dropboxusercontent.com/s/12829812982/badge1.svg",
+      "criteria": "http://badgetastic.com/badge1-criteria",
+      "issuer": "http://badgetastic.com/issuer",
+      "tags": [
+        "Skill",
+        "Doer",
+        "Realistic"
+      ]
+    }
+
+As well as inspecting the badge class itself, the directory will try and retrieve the issuer. If the issuer is in a valid
+[Issuer Organization](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#issuerorganization) format,
+it will be parsed and the issuer name will be searchable in the directory.
+
+## Registering for the directory index
+
+For simplicity, there is a form you can use to register with the directory at http://jpcamara.github.io/openbadges-directory.
+Behind the scenes, it hits the directory registration endpoint.
+
+The register endpoint is described in the [API](#api) section.
 
 <a name="env_variables" />
 ## Environment Variables
@@ -147,6 +207,50 @@ accept a 'limit' query.
       }, {
         "doer": 91
       }]
+    }
+
+### /register
+
+Registers an endpoint for participation in the directory. Registering means that you have an endpoint in the valid badgelist
+format (go [here](#badgelist) to see the badgelist specified). The registration involves some required and optional fields.
+The fields are:
+
+- **endpoint**: Required field in a URL format. Specifies where the badgelist is being hosted.
+- **name**: Required field. Specifies your name.
+- **website**: Required field in a URL format. Specifies your website.
+- **email**: Required field for contact
+- **description**: Optional field to describe who you are and what your purpose for using the directory is
+- **organization**: Optional field for a possible organization name
+
+*POST Request*
+
+    /register
+    {
+      "endpoint": "http://mybadgelist.com/badgelist"
+      "name": "Badgelister",
+      "website": "http://mybadgelist.com",
+      "email": "email@badgelist.com"
+      "description": "We are devoted to listing badge classes",
+      "organization": ""
+    }
+
+*Response*
+
+    {
+      "data": { "success": true }
+    }
+
+    If there is a failed validation
+
+    {
+      "status": "validation failed",
+      "errors": {
+        "email": {
+          "code": "MISSING",
+          "field": "email",
+          "message": "Field is required"
+        }
+      }
     }
 
 <a name="curl" />
