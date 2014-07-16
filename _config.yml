@@ -1,0 +1,16 @@
+url: https://github.com/mozilla/openbadges-directory
+safe: true
+lsi: false
+source: .
+destination: ./public
+exclude:
+  - Rakefile
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
+  - .gitignore
+  - ./public
+markdown: rdiscount
+pygments: false
+port: 9876

@@ -1,0 +1,48 @@
+<script src="javascripts/vendor/jquery/dist/jquery.min.js"></script>
+<script src="javascripts/vendor/angular/angular.js"></script>
+<script src="javascripts/vendor/angular-route/angular-route.min.js"></script>
+<script src="javascripts/vendor/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="javascripts/vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/controllers.js"></script>
+
+<div id="registration" ng-controller="RegisterController">
+  <div class="registered" ng-if="success">
+    Thanks for adding your badges to the directory.<br/>
+  </div>
+  <form ng-submit="register()" ng-if="!success">
+    Register to have your site indexed:<br/>
+    <label>
+      <span>Endpoint</span>
+      <input type="text" name="endpoint" value="" ng-model="registerData.endpoint" size="50"/>
+      <span class="error" ng-model="errors.endpoint.message">{{errors.endpoint.message}}</span>
+    </label>
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" value="" ng-model="registerData.name" size="50"/>
+      <span class="error" ng-model="errors.name.message">{{errors.name.message}}</span>
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="text" name="email" value="" ng-model="registerData.email" size="50"/>
+      <span class="error" ng-model="errors.email.message">{{errors.email.message}}</span>
+    </label>
+    <label>
+      <span>Website</span>
+      <input type="text" name="website" value="" ng-model="registerData.website" size="50"/>
+      <span class="error" ng-model="errors.website.message">{{errors.website.message}}</span>
+    </label>
+    <label>
+      <span>Description (Optional)</span>
+      <textarea name="description" ng-model="registerData.description" rows="10" cols="50"></textarea>
+      <span class="error" ng-model="errors.description.message">{{errors.description.message}}</span>
+    </label>
+    <label>
+      <span>Organization (Optional)</span>
+      <input type="text" name="organization" value="" ng-model="registerData.organization" size="50"/>
+      <span class="error" ng-model="errors.organization.message">{{errors.organization.message}}</span>
+    </label>
+
+    <button>Register</button>
+  </form>
+</div>
