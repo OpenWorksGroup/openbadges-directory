@@ -51,16 +51,16 @@ The above would be expected to have a valid badge class listing at http://badget
 <a name="Develop" /></a>
 ## Retrieve Badges
 
-[API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | Approach so far + future(#approach)
+[API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | [Approach so far + future](#approach)
 
 
-<a name="api_explorer" />
+<a name="api_explorer" /></a>
 ### API Explorer
 
 For an interactive experience with the api, go to /developers/api-explorer. This will load up a swagger powered interface
 that can directly invoke the api.
 
-<a name="api" />
+<a name="api" /></a>
 ### API
 
 All endpoints allow for a limit and page field to modify the number of results returned, and paginate the results.
@@ -135,7 +135,7 @@ accept a 'limit' query.
       }]
     }
 
-<a name="curl" />
+<a name="curl" /></a>
 ### Curl'ing the API
 
     curl http://localhost:9000/recent
@@ -155,7 +155,7 @@ accept a 'limit' query.
     #get all tags, by popularity
     curl http://localhost:9000/tags
 
-<a name="approach" />
+<a name="approach" /></a>
 ### Approach so far + future
 
 This API is a prototype to both integrate with the initial version of openbadges-discovery (https://github.com/mozilla/openbadges-discovery),
@@ -172,7 +172,11 @@ https://github.com/mozilla/openbadges-directory/issues/3
 https://github.com/mozilla/openbadges-directory/issues/6
 https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for badges/badge classes
 
-# License
+
+<a name="resources" /></a>
+##Resources
+
+#### License
 
 [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
 
