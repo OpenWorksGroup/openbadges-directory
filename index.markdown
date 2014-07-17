@@ -5,7 +5,7 @@ layout: site
 The directory is a prototype of an un-opinionated storage and retrieval system for <a href="openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
 
 
-
+[Add Your Badges](#addbadges) | [Retrieve Badges](#develop) | [Additional Resources](#resources)
 
 
 <a name="addbadges" /></a>
@@ -23,26 +23,26 @@ Currently the directory indexes badge classes only. To have your badge classes i
  
 When the directory retrieves a badge listing it collects up all of the locations and follows them to their badge class definitions. For instance, let's say you are a badge issuer called badgetastic and your website is http://badgetastic.com. To participate in the directory, you would be expected to expose an endpoint somewhere (on your site or otherwise) that lists all of the badges you want indexed from badgetastic. The url is up to you, but assuming you host it on your site and expose the endpoint at http://badgetastic.com/badgelist - hitting that url we would expect to see a listing of badge locations as specified in the earlier code snippet. Each of these locations would be expected to lead to a valid badge class.
 
- {
-   "badgelist": [{
-     "location": "http://badgetastic.com/badge1"
-   }]
- }
+    {
+        "badgelist": [{
+            "location": "http://badgetastic.com/badge1"
+        }]
+    }
  
 Would be expected to have a valid badge class listing at http://badgetastic.com/badge1:
 
- {
-   "name": "Badge 1!",
-   "description": "You speak computers and you can use them too.",
-   "image": "https://dl.dropboxusercontent.com/s/12829812982/badge1.svg",
-   "criteria": "http://badgetastic.com/badge1-criteria",
-   "issuer": "http://badgetastic.com/issuer",
-   "tags": [
-     "Skill",
-     "Doer",
-     "Realistic"
-   ]
- }
+    {
+        "name": "Badge 1!",
+        "description": "You speak computers and you can use them too.",
+        "image": "https://dl.dropboxusercontent.com/s/12829812982/badge1.svg",
+        "criteria": "http://badgetastic.com/badge1-criteria",
+        "issuer": "http://badgetastic.com/issuer",
+        "tags": [
+        "Skill",
+        "Doer",
+        "Realistic"
+        ]
+    }
  
 {% include registration-form.html %}
 
