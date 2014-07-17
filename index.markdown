@@ -166,6 +166,7 @@ In terms of crawling and indexing badges:
 [https://github.com/mozilla/openbadges-discussion/issues/1 - badge indexing](https://github.com/mozilla/openbadges-discussion/issues/1)
 
 In terms of extending badges (and what impact that may have on searching and retrieving):
+
 * [https://github.com/mozilla/openbadges-discussion/issues/8 - badge class extensions](https://github.com/mozilla/openbadges-discussion/issues/8 )
 * [https://github.com/mozilla/openbadges-directory/issues/3](https://github.com/mozilla/openbadges-directory/issues/3)
 * [https://github.com/mozilla/openbadges-directory/issues/6](https://github.com/mozilla/openbadges-directory/issues/6)
