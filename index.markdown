@@ -9,7 +9,7 @@ The directory is a prototype of an un-opinionated storage and retrieval system f
 
 
 <a name="addbadges" /></a>
-## Add Badges
+## Add Your Badges
 
 Currently the directory indexes badge classes only. To have your badge classes indexed in the directory, you must expose an endpoint that lists the badges you want to have indexed. By endpoint, this just means a URL which when accessed returns a JSON message. The message is very simple and this is a valid example:
 
@@ -46,7 +46,7 @@ The above would be expected to have a valid badge class listing at http://badget
  
 {% include registration-form.html %}
 
-***
+---------------------------------------
 
 ## Quick Start
 
