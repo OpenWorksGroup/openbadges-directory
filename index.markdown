@@ -5,7 +5,7 @@ layout: site
 The directory is a prototype of an un-opinionated storage and retrieval system for <a href="openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
 
 
-[Add Your Badges](#addbadges) | [Retrieve Badges](#develop) | [Additional Resources](#resources)
+[Add Your Badges](#addbadges) | [Retrieve Badges (API)](#develop) | [Additional Resources](#resources)
 
 
 <a name="addbadges" /></a>
@@ -48,79 +48,20 @@ The above would be expected to have a valid badge class listing at http://badget
 
 ---------------------------------------
 
-## Quick Start
+<a name="Develop" /></a>
+## Retrieve Badges
 
-    npm install
-    npm run gulp                             #runs jshint, mocha, and then starts a watch process
-    DATABASE_URL=... npm run-script migrate #creates the database tables needed for directory
-    npm start                                #starts the actual search process
+[API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | Approach so far + future(#approach)
 
-    node_modules/.bin/gulp test              #run tests
-    node_modules/.bin/gulp integrationTest   #run integration tests (starts the api and makes calls against it)
-    node_modules/.bin/gulp lint              #run linter
-    node_modules/.bin/gulp watch             #watch
-
-[Environment Variables](#env_variables)
-
-[Project Structure](#proj_structure)
-
-[API Explorer](#api_explorer)
-
-[API](#api)
-
-[Curl'ing the API](#curl)
-
-[Trying the examples](#examples)
-
-[Invalid Badges](#invalid_badges)
-
-<a name="env_variables" />
-## Environment Variables
-
-Mostly don't need environment variables at the moment, but if you don't want to use the dummy badge store
-located in the project itself, you can set the BADGE_STORE environment variable. It should
-
-    BADGE_STORE                             #full path to a JSON file of newline separated JSON objects
-    DATABASE_URL                            #URL to mysql - format is mysql://user:pass@host/database
-    ES_HOST                                 #(optional) URL to elasticsearch. Defaults to http://localhost:9200
-    INDEX_INTERVAL                          #(optional) Interval for indexing issuers in milliseconds. Defaults to 60 seconds.
-    EMAIL_SERVICE                           #Uses nodemailer internally, so requires one of the node nodemailer service names (example: 'SendGrid')
-    EMAIL_USER                              #Email service user
-    EMAIL_PASS                              #Email service password
-
-If you are trying to load the example store for Discovery you'll need the following
-
-    GOOGLE_EMAIL
-    GOOGLE_PASSWORD
-    GOOGLE_KEY
-    URL                                     #The url (protocol, host, port) where your app lives
-
-<a name="proj_structure" />
-## Project Structure
-
-    /app.js - Starts the cluster
-    /config.json - Contains environment variables for local use (.gitignore'd, see config.json.example for a sample)
-    /gulpfile.js - Build tasks and tests
-    /developers - Contains the api-explorer, the swagger driven ui for interacting with the api directly
-    /examples - Example code for hitting the directory from the browser, and from the server
-    /lib - All of the main project code
-      /api - API endpoint code
-      /engine - 'engines' for indexing with either elasticsearch or lunr (elasticsearch by default, lunr isn't persistent or stable)
-      /indexer - Worker script that indexes the available endpoints using the 'issuer' table
-      /swagger - Swagger setup for the api-explorer
-      /test - Short-term code for parsing the discovery badges
-      /validator - Contains validation code for badge classes
-    /migrations - Contains all of the migrations for the project. Managed using 'db-migrate'
-    /test - Contains all the test (spec) files, written using mocha. Run using gulp (see "Quick Start")
 
 <a name="api_explorer" />
-## API Explorer
+### API Explorer
 
 For an interactive experience with the api, go to /developers/api-explorer. This will load up a swagger powered interface
 that can directly invoke the api.
 
 <a name="api" />
-## API
+### API
 
 All endpoints allow for a limit and page field to modify the number of results returned, and paginate the results.
 
@@ -129,7 +70,7 @@ All endpoints allow for a limit and page field to modify the number of results r
       page: int
     }
 
-### /search
+#### /search
 
 Returns all badges by a search criteria. Currently allowed to have no criteria, but that may be changed since what is a search
 without any criteria?
@@ -144,7 +85,7 @@ without any criteria?
       "data": [array of badges]
     }
 
-### /recent
+#### /recent
 
 Returns all recently indexed badges. Does not accept any params.
 
@@ -154,7 +95,7 @@ Returns all recently indexed badges. Does not accept any params.
       "data": [array of badges]
     }
 
-### /:badgeLocation
+#### /:badgeLocation
 
 Returns a specific badge class, based on the location url (encoded).
 
@@ -171,7 +112,7 @@ Returns a specific badge class, based on the location url (encoded).
       }
     }
 
-### /tags
+#### /tags
 
 Returns all tags in the directory, sorted by most popular. This endpoint is not paginated, but does
 accept a 'limit' query.
@@ -195,7 +136,7 @@ accept a 'limit' query.
     }
 
 <a name="curl" />
-## curl'ing the api
+### Curl'ing the API
 
     curl http://localhost:9000/recent
 
@@ -214,39 +155,8 @@ accept a 'limit' query.
     #get all tags, by popularity
     curl http://localhost:9000/tags
 
-<a name="examples" />
-## Trying the examples
-
-There is an examples folder with a version of the service being proxied for a web client and a simple usecase of a
-server-side directory client.
-
-To setup:
-
-    cd examples
-    npm install
-    npm run-script browserify
-
-To run the client (from the examples folder):
-
-    npm run-script client
-    npm run-script server
-    #login to http://localhost:3000/example.html
-
-To run the server example (from the examples folder):
-
-    npm run-script server
-    node server/example
-
-<a name="invalid_badges" />
-## Invalid badges
-
-This is not part of the standard API, but if you are hosting the directory and want to get a list of invalid badges, this is
-how you would hit your elastic search instance.
-
-    #get all invalid badges
-    curl -X POST -H "Content-Type: application/json" -d '{"query":{"bool":{"must":[{"term":{"_directory._valid": false}}]}}}' localhost:9200/badge_classes/badge_class/_search?pretty=1&from=0&size=100&sort=_timestamp
-
-## Approach so far + future
+<a name="approach" />
+### Approach so far + future
 
 This API is a prototype to both integrate with the initial version of openbadges-discovery (https://github.com/mozilla/openbadges-discovery),
 and also to serve a starting point for an actual badge directory API for the general badge community/ecosystem.
