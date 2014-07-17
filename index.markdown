@@ -2,7 +2,10 @@
 layout: site
 ---
 
-Directory for searching community badge classes.
+The directory is an un-opinionated storage and retrieval system for <a href="openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
+
+
+[Add Your Badges](#registration) | [Developers](#develop) | [Additional Resources](#resources)
 
 {% include registration-form.html %}
 
