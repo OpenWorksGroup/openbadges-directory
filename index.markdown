@@ -5,7 +5,7 @@ layout: site
 The directory is a prototype of an un-opinionated storage and retrieval system for <a href="openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
 
 
-[Add Your Badges](#addbadges) | [Retrieve Badges](#develop) | [Additional Resources](#resources)
+
 
 
 <a name="addbadges" />
@@ -13,13 +13,13 @@ The directory is a prototype of an un-opinionated storage and retrieval system f
 
 Currently the directory indexes badge classes only. To have your badge classes indexed in the directory, you must expose an endpoint that lists the badges you want to have indexed. By endpoint, this just means a URL which when accessed returns a JSON message. The message is very simple and this is a valid example:
 
- {
-   "badgelist": [{
-     "location": "http://my-site.com/location-of-badge"
-   }, {
-     "location": "http://my-site.com/location-of-other-badge"
-   }]
- }
+    {
+        "badgelist": [{
+            "location": "http://my-site.com/location-of-badge"
+        }, {
+            "location": "http://my-site.com/location-of-other-badge"
+        }]
+    }
  
 When the directory retrieves a badge listing it collects up all of the locations and follows them to their badge class definitions. For instance, let's say you are a badge issuer called badgetastic and your website is http://badgetastic.com. To participate in the directory, you would be expected to expose an endpoint somewhere (on your site or otherwise) that lists all of the badges you want indexed from badgetastic. The url is up to you, but assuming you host it on your site and expose the endpoint at http://badgetastic.com/badgelist - hitting that url we would expect to see a listing of badge locations as specified in the earlier code snippet. Each of these locations would be expected to lead to a valid badge class.
 
@@ -45,6 +45,8 @@ Would be expected to have a valid badge class listing at http://badgetastic.com/
  }
  
 {% include registration-form.html %}
+
+* * *
 
 ## Quick Start
 
