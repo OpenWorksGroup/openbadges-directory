@@ -29,7 +29,7 @@ When the directory retrieves a badge listing it collects up all of the locations
         }]
     }
  
-Would be expected to have a valid badge class listing at http://badgetastic.com/badge1:
+The above would be expected to have a valid badge class listing at http://badgetastic.com/badge1:
 
     {
         "name": "Badge 1!",
@@ -46,7 +46,7 @@ Would be expected to have a valid badge class listing at http://badgetastic.com/
  
 {% include registration-form.html %}
 
-* * *
+***
 
 ## Quick Start
 
