@@ -5,7 +5,7 @@ layout: site
 The directory is a prototype of an un-opinionated storage and retrieval system for <a href="http://openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
 
 
-[Add Your Badges](#addbadges) | [Retrieve Badges (API)](#develop) | [Additional Resources](#resources)
+[Add Your Badges](#addbadges) | [Retrieve Badges (API)](#retrieve) | [Additional Resources](#resources)
 
 
 <a name="addbadges" /></a>
@@ -48,7 +48,7 @@ The above would be expected to have a valid badge class listing at http://badget
 
 ---------------------------------------
 
-<a name="develop" /></a>
+<a name="retrieve" /></a>
 ## Retrieve Badges
 
 [API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | [Approach so far + future](#approach)
