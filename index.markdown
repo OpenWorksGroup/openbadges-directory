@@ -2,7 +2,7 @@
 layout: site
 ---
 
-The directory is a prototype of an un-opinionated storage and retrieval system for <a href="openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
+The directory is a prototype of an un-opinionated storage and retrieval system for <a href="http://openbadges.org" target="_blank">Open Badges</a> and an open source community project of the <a href="http://wiki.badgealliance.org/index.php/Directory_Working_Group" target="_blank">Directory Working Group</a> in coordination with the <a href="http://badgealliance.org/" target="_blank">Badge Alliance</a>. 
 
 
 [Add Your Badges](#addbadges) | [Retrieve Badges (API)](#develop) | [Additional Resources](#resources)
@@ -175,6 +175,10 @@ https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for ba
 
 <a name="resources" /></a>
 ##Resources
+* [Open Badges](http://openbadges.org)
+* [Badge Alliance](http://badgealliance.org/)
+* [Directory Working Group](http://wiki.badgealliance.org/index.php/Directory_Working_Group)
+* [Open Badges Directory on Github](https://github.com/mozilla/openbadges-directory)
 
 #### License
 
