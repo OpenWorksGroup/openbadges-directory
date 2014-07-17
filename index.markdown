@@ -174,7 +174,8 @@ https://github.com/mozilla/openbadges-badgekit/issues/91  - location info for ba
 
 
 <a name="resources" /></a>
-##Resources
+##Additional Resources
+
 * [Open Badges](http://openbadges.org)
 * [Badge Alliance](http://badgealliance.org/)
 * [Directory Working Group](http://wiki.badgealliance.org/index.php/Directory_Working_Group)
