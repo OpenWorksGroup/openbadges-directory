@@ -48,7 +48,7 @@ The above would be expected to have a valid badge class listing at http://badget
 
 ---------------------------------------
 
-<a name="Develop" /></a>
+<a name="develop" /></a>
 ## Retrieve Badges
 
 [API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | [Approach so far + future](#approach)
@@ -57,8 +57,7 @@ The above would be expected to have a valid badge class listing at http://badget
 <a name="api_explorer" /></a>
 ### API Explorer
 
-For an interactive experience with the api, go to /developers/api-explorer. This will load up a swagger powered interface
-that can directly invoke the api.
+For an interactive experience with the api, go to [/developers/api-explorer](/developers/api-explorer). This will load up a swagger powered interface that can directly invoke the api.
 
 <a name="api" /></a>
 ### API
