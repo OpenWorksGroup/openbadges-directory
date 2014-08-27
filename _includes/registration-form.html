@@ -11,34 +11,34 @@
     Thanks for adding your badges to the directory.<br/>
   </div>
   <form ng-submit="register()" ng-if="!success">
-    Register to have your site indexed:<br/>
+    Register to have your badges indexed:<br/>
     <label>
-      <span>Endpoint</span>
+      <span>Endpoint URL:</span>
       <input type="text" name="endpoint" value="" ng-model="registerData.endpoint" size="50"/>
       <span class="error" ng-model="errors.endpoint.message">{{errors.endpoint.message}}</span>
     </label>
     <label>
-      <span>Name</span>
+      <span>Your Name:</span>
       <input type="text" name="name" value="" ng-model="registerData.name" size="50"/>
       <span class="error" ng-model="errors.name.message">{{errors.name.message}}</span>
     </label>
     <label>
-      <span>Email</span>
+      <span>Email:</span>
       <input type="text" name="email" value="" ng-model="registerData.email" size="50"/>
       <span class="error" ng-model="errors.email.message">{{errors.email.message}}</span>
     </label>
     <label>
-      <span>Website</span>
+      <span>Website:</span>
       <input type="text" name="website" value="" ng-model="registerData.website" size="50"/>
       <span class="error" ng-model="errors.website.message">{{errors.website.message}}</span>
     </label>
     <label>
-      <span>Description (Optional)</span>
+      <span>Description (Optional):</span>
       <textarea name="description" ng-model="registerData.description" rows="10" cols="50"></textarea>
       <span class="error" ng-model="errors.description.message">{{errors.description.message}}</span>
     </label>
     <label>
-      <span>Organization (Optional)</span>
+      <span>Organization (Optional):</span>
       <input type="text" name="organization" value="" ng-model="registerData.organization" size="50"/>
       <span class="error" ng-model="errors.organization.message">{{errors.organization.message}}</span>
     </label>
