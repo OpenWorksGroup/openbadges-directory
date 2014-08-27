@@ -1,0 +1,18 @@
+{
+  "DATABASE_URL": "mysql://user:pass@localhost/dbname",
+
+  "GOOGLE_EMAIL": "gmail@gmail.com",
+  "GOOGLE_PASSWORD": "gmailpass",
+  "GOOGLE_KEY": "spreadsheet_key",
+
+  "URL": "http://localhost:9000",
+
+  "API_KEY": "",
+  "ES_HOST": "",
+  "INDEX_INTERVAL": "",
+  "QUERY_INTERVAL": "",
+
+  "EMAIL_SERVICE": "SendGrid",
+  "EMAIL_USER": "user",
+  "EMAIL_PASS": "pass"
+}

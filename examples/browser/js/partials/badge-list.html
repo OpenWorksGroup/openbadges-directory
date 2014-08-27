@@ -1,0 +1,25 @@
+<div class="badge-list">
+  <div class="badge-page"
+       infinite-scroll="nextPage()"
+       infinite-scroll-disabled="busy"
+       infinite-scroll-distance="3" class="row">
+    <div class="col-sm-12 labels">
+      <div class="label label-primary" ng-repeat="tag in tags" ng-click="removeTag($index)" style="cursor: pointer;"><span>&times;</span> #{{tag}}</div>
+    </div>
+    <div class="col-med-4 col-sm-3" ng-repeat="badge in badges">
+      <div class="badge-class">
+        <div class="display-block bg-gray inner text-center text-inverse">
+          <img src="{{badge.image}}"/>
+        </div>
+        <div class="text-center inner">
+          <strong href="#" class="strong">{{badge.name}}</strong>
+          <div><small class="text-center" style="color: gray;">{{badge._directory._location}}</small></div>
+        </div>
+        <div class="text-center text-inverse" style="word-wrap: break-word; white-space: pre-wrap;">{{badge.description}}</div>
+        <div class="tags text-center">
+          <span class="label label-primary" style="cursor: pointer; display: inline-block; " ng-repeat="tag in badge.tags" ng-click="addTag(badge, $index)">#{{tag}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

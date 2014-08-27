@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+node_modules
+config.json
+npm-debug.log
+
+examples/browser/bundle.js

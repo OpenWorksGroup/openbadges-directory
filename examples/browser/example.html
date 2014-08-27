@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="directory">
+<head>
+  <link rel="stylesheet" type="text/css" href="/examples/browser/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/examples/browser/css/app.css"/>
+</head>
+<body ng-controller="DirectoryController">
+  <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="ribbon">
+        Prototype
+        <img src="/examples/browser/moz-icon.svg"/>
+      </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Directory</a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-collapsible">
+        <ul class="nav navbar-nav navbar-left">
+          <li ng-class="{active: isActive('/recent')}"><a href="#/recent">Recent</a></li>
+          <li ng-class="{active: isActive('/get')}"><a href="#/get">Get</a></li>
+          <li ng-class="{active: isActive('/search')}"><a href="#/search">Search</a></li>
+          <li>&nbsp;</li>
+        </ul>
+        <form class="navbar-form">
+          <div class="form-group" style="display:inline;">
+            <div class="input-group">
+              <div class="input-group-btn" dropdown is-open="status.isopen" cancel-click>
+                <button type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled">
+                  Tags <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><input type="text" class="form-control" ng-model="tag" ng-enter="addTagFromForm()"/></li>
+                </ul>
+              </div>
+              <input ng-disabled="disabled" type="text" class="form-control" placeholder="{{placeholder}}" ng-model="search">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div ng-view></div>
+  <script src="/examples/browser/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/examples/browser/bower_components/angular/angular.js"></script>
+  <script src="/examples/browser/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="/examples/browser/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <script src="/examples/browser/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="/examples/browser/js/app.js"></script>
+  <script src="/examples/browser/js/controllers.js"></script>
+</body>
+</html>
