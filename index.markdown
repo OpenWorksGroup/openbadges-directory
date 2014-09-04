@@ -159,6 +159,7 @@ accept a 'limit' query.
 
 
 NodeJS: [https://github.com/jpcamara/openbadges-directory-client](https://github.com/jpcamara/openbadges-directory-client )
+
 Example Browser: [http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent)
 
 <a name="approach" /></a>
