@@ -4,12 +4,6 @@ var dbm    = require('db-migrate'),
 
 exports.up = function(db, callback) {
   async.parallel([
-    function createListings(parallelCallback) {
-      db.createTable('listings', {
-        id: { type: type.INTEGER, primaryKey: 'true', autoIncrement: true },
-        badge_class: type.TEXT
-      }, parallelCallback);
-    },
     function createEndpoints(parallelCallback) {
       db.createTable('endpoints', {
         id: { type: type.INTEGER, primaryKey: 'true', autoIncrement: true },
