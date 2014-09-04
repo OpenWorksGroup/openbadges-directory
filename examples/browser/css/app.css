@@ -136,6 +136,11 @@ footer .nav>li>a:hover {
   margin: 2px;
 }
 
+.display-block img {
+  height: 200px;
+  max-width: 90%;
+}
+
 .ribbon {
   background-color: #fc9141;
   color: white;
