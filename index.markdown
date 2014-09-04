@@ -51,7 +51,7 @@ The above would be expected to have a valid badge class listing at http://badget
 <a name="retrieve" /></a>
 ## Retrieve Badges
 
-[API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | [Approach so far + future](#approach)
+[API Explorer](#api_explorer) | [API](#api) | [Curl'ing the API](#curl) | [Libraries &amp; Examples](#libraries) | [Approach so far + future](#approach)
 
 
 <a name="api_explorer" /></a>
@@ -153,6 +153,13 @@ accept a 'limit' query.
 
     #get all tags, by popularity
     curl http://localhost:9000/tags
+    
+<a name="Libraries" /></a>
+### Libraries &amp; Examples
+
+
+NodeJS: [https://github.com/jpcamara/openbadges-directory-client](https://github.com/jpcamara/openbadges-directory-client )
+Example Browser: [http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent)
 
 <a name="approach" /></a>
 ### Approach so far + future
