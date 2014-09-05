@@ -48,15 +48,14 @@ Returns all badges matching the specified search parameters.
 
 __Available Request Parameters__
 
-<table>
-<tr><td><strong>Parameter</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td></tr>
-<tr><td><code>q</code></td><td><em>string</em></td><td>text to use in full text search of badges</td></tr>
-<tr><td><code>tags</code></td><td><em>string</em></td><td>comma-separated list of badge tags to match in returned badges - <strong><em>multiple tags create AND condition</em></code></td></tr>
-<tr><td><code>name</code></td><td><em>string</em></td><td>name of badge class to return</td></tr>
-<tr><td><code>issuer</code></td><td><em>string</em></td><td>name of issuer whose badges should be returned</td></tr>
-<tr><td><code>limit</code></td><td><em>integer</em></td><td>how many results to return</td></tr>
-<tr><td><code>page</code></td><td><em>integer</em></td><td>page of results to return</td></tr>
-</table>
+| __Parameter__ | __Type__ | __Description__ |
+| :------------ | :------- | :-------------- |
+| `q` | _string_ | text to use in full text search of badges |
+| `tags` | _string_ | comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___ |
+| `name` | _string_ | name of badge class to return |
+| `issuer` | _string_ | name of issuer whose badges should be returned |
+| `limit` | _integer_ | how many results to return |
+| `page` | _integer_ | page of results to return |
 
 
 ___At least one search parameter is required.___
@@ -377,10 +376,9 @@ ___You can use the tag information to carry out [search](#search) queries.___
 __Available Request Parameters__
 
 
-<table>
-<tr><td><strong>Parameter</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td></tr>
-<tr><td><code>limit</code></td><td><em>integer</em></td><td>how many results to return</td></tr>
-</table>
+| __Parameter__ | __Type__ | __Description__ |
+| :------------ | :------- | :-------------- |
+| `limit` | _integer_ | how many results to return |
 
 
 ___Parameter not required.___
