@@ -59,7 +59,7 @@ When you have your badge class listing ready, copy the URL into the below form, 
 ---------------------------------------
 
 <a name="approach" /></a>
-### Approach so far + future
+## Approach So Far (+ Future)
 
 This API is a prototype to integrate with the initial version of [openbadges-discovery](https://github.com/mozilla/openbadges-discovery),
 and to serve as a starting point for an actual badge directory API for the general badge community/ecosystem.
@@ -70,6 +70,7 @@ In terms of crawling and indexing badges:
 * [https://github.com/mozilla/openbadges-discussion/issues/1 - badge indexing](https://github.com/mozilla/openbadges-discussion/issues/1)
 
 In terms of extending badges (and what impact that may have on searching and retrieving):
+
 * [https://github.com/mozilla/openbadges-discussion/issues/8 - badge class extensions](https://github.com/mozilla/openbadges-discussion/issues/8 )
 * [https://github.com/mozilla/openbadges-directory/issues/3](https://github.com/mozilla/openbadges-directory/issues/3)
 * [https://github.com/mozilla/openbadges-directory/issues/6](https://github.com/mozilla/openbadges-directory/issues/6)
@@ -77,14 +78,14 @@ In terms of extending badges (and what impact that may have on searching and ret
 
 
 <a name="resources" /></a>
-##Additional Resources
+## Additional Resources
 
 * [Open Badges](http://openbadges.org)
 * [Badge Alliance](http://badgealliance.org/)
 * [Directory Working Group](http://wiki.badgealliance.org/index.php/Directory_Working_Group)
 * [Open Badges Directory on Github](https://github.com/mozilla/openbadges-directory)
 
-#### License
+### License
 
 [MPL 2.0](http://www.mozilla.org/MPL/2.0/)
 
