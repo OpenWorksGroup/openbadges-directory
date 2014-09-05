@@ -27,35 +27,40 @@ You can see the badge class information for badges currently in the directory, p
 	* [Tags](#tags)
 * [Libraries and Examples](#libraries-and-examples)
 
+
 <a name="api-explorer"></a>
 ## API Explorer
 
 For an interactive experience with the API, visit the [API Explorer](http://test-openbadges-directory.herokuapp.com/developers/api-explorer#!/search/search). This will load up a swagger-powered interface that can directly invoke the API endpoints listed below.
+
 
 <a name="api"></a>
 ## API
 
 The API provides various endpoints for retrieving badges classes currently indexed by the directory - see below for details.
 
+
 <a name="search"></a>
 ### Search
 
 Returns all badges matching the specified search parameters.
 
+
 __Available Request Parameters__
 
-
-| __Parameter__ | __Type__ | __Description__ |
-|:--|:--|:--|
-| `q` | _string_ | text to use in full text search of badges |
-| `tags` | _string_ | comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___ |
-| `name` | _string_ | name of badge class to return |
-| `issuer` | _string_ | name of issuer whose badges should be returned |
-| `limit` | _integer_ | how many results to return |
-| `page` | _integer_ | page of results to return |
+<table>
+<tr><td><strong>Parameter</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><code>q</code></td><td><em>string</em></td><td>text to use in full text search of badges</td></tr>
+<tr><td><code>tags</code></td><td><em>string</em></td><td>comma-separated list of badge tags to match in returned badges - <strong><em>multiple tags create AND condition</em></code></td></tr>
+<tr><td><code>name</code></td><td><em>string</em></td><td>name of badge class to return</td></tr>
+<tr><td><code>issuer</code></td><td><em>string</em></td><td>name of issuer whose badges should be returned</td></tr>
+<tr><td><code>limit</code></td><td><em>integer</em></td><td>how many results to return</td></tr>
+<tr><td><code>page</code></td><td><em>integer</em></td><td>page of results to return</td></tr>
+</table>
 
 
 ___At least one search parameter is required.___
+
 
 
 __Expected Request__
@@ -64,6 +69,7 @@ __Expected Request__
 {% highlight text %}
 /search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
 {% endhighlight %}
+
 
 
 __Example Requests__
@@ -76,6 +82,7 @@ __Example Requests__
 /search?issuer=achievery
 /search?q=delegate&issuer=achievery
 {% endhighlight %}
+
 
 
 __Expected Response__
@@ -124,6 +131,7 @@ JSON-structured array of badge classes matching the search parameters, or an emp
 {% endhighlight %}
 
 
+
 __Response Structure__
 
 
@@ -146,6 +154,7 @@ __Response Structure__
 		* name
 
 
+
 __Potential Errors__
 
 
@@ -163,10 +172,12 @@ __Potential Errors__
 Returns all recently indexed badges.
 
 
+
 __Available Request Parameters__
 
 
 ___NONE___
+
 
 
 __Expected Request__
@@ -175,6 +186,7 @@ __Expected Request__
 {% highlight text %}
 /recent
 {% endhighlight %}
+
 
 
 __Expected Response__
@@ -223,6 +235,7 @@ JSON-structured array of badge classes recently indexed by the directory.
 {% endhighlight %}
 
 
+
 __Response Structure__
 
 
@@ -245,10 +258,12 @@ __Response Structure__
 		* name
 
 
+
 __Potential Errors__
 
 
 ___NONE___
+
 
 
 
@@ -258,10 +273,12 @@ ___NONE___
 Returns a specific badge class, based on its location URL (encoded).
 
 
+
 __Available Request Parameters__
 
 
 ___NONE___
+
 
 
 __Expected Request__
@@ -270,6 +287,7 @@ __Expected Request__
 {% highlight text %}
 /http%3A%2F%2Fissuersite.com%2Fbadgeclass
 {% endhighlight %}
+
 
 
 __Expected Response__
@@ -310,6 +328,7 @@ JSON-structured object containing requested badge class.
 {% endhighlight %}
 
 
+
 __Response Structure__
 
 
@@ -332,6 +351,7 @@ __Response Structure__
 		* name
 
 
+
 __Potential Errors__
 
 
@@ -344,6 +364,7 @@ __Potential Errors__
 
 
 
+
 <a name="tags"></a>
 ### Tags
 
@@ -352,15 +373,18 @@ Returns all tags in the directory, _sorted by most popular_.
 ___You can use the tag information to carry out [search](#search) queries.___
 
 
+
 __Available Request Parameters__
 
 
-| __Parameter__ | __Type__ | __Description__ |
-|:--|:--|:--|
-| `limit` | _integer_ | how many results to return |
+<table>
+<tr><td><strong>Parameter</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><code>limit</code></td><td><em>integer</em></td><td>how many results to return</td></tr>
+</table>
 
 
 ___Parameter not required.___
+
 
 
 __Expected Request__
@@ -369,6 +393,7 @@ __Expected Request__
 {% highlight text %}
 /tags?limit=10
 {% endhighlight %}
+
 
 
 __Expected Response__
@@ -394,11 +419,13 @@ JSON-structured array of badge tags together with the number of times each tag i
 {% endhighlight %}
 
 
+
 __Response Structure__
 
 
 * data
 	* tag name : number of occurrences
+
 
 
 __Potential Errors__
@@ -408,6 +435,8 @@ ___NONE___
 
 
 
+
+<a name="libraries-and-examples"></a>
 ## Libraries and Examples
 
 NodeJS: [https://github.com/jpcamara/openbadges-directory-client](https://github.com/jpcamara/openbadges-directory-client )
