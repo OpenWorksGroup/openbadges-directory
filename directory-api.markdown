@@ -50,12 +50,12 @@ __Available Request Parameters__
 
 | &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
-| `q` | _string_ | text to use in full text search of badges |
-| `tags` | _string_ | comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___ |
-| `name` | _string_ | name of badge class to return |
-| `issuer` | _string_ | name of issuer whose badges should be returned |
-| `limit` | _integer_ | how many results to return |
-| `page` | _integer_ | page of results to return |
+| &nbsp;`q`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;text to use in full text search of badges&nbsp; |
+| &nbsp;`tags`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___&nbsp; |
+| &nbsp;`name`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;name of badge class to return&nbsp; |
+| &nbsp;`issuer`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;name of issuer whose badges should be returned&nbsp; |
+| &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return&nbsp; |
+| &nbsp;`page`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;page of results to return&nbsp; |
 
 
 ___At least one search parameter is required.___
@@ -376,9 +376,9 @@ ___You can use the tag information to carry out [search](#search) queries.___
 __Available Request Parameters__
 
 
-| __Parameter__ | __Type__ | __Description__ |
+| &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
-| `limit` | _integer_ | how many results to return |
+| &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return&nbsp; |
 
 
 ___Parameter not required.___
