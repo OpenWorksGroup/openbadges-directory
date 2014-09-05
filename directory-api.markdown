@@ -13,7 +13,7 @@ With the API, you can retrieve:
 * badges recently added to the directory
 * specific badges using the badge class location
 * badge tags
-	* _which you can then use to query for badges_
+	* _which you can then use to search for badges_
 
 The API returns a JSON-formatted list of badge classes, which your site or application can then parse and present in any way you choose. The badge class data includes information about what a badge represents, who issued it and the criteria for earning it. 
 
@@ -33,18 +33,15 @@ You can see the badge class information for badges currently in the directory, p
 
 For an interactive experience with the API, visit the [API Explorer](http://test-openbadges-directory.herokuapp.com/developers/api-explorer#!/search/search). This will load up a swagger-powered interface that can directly invoke the API endpoints listed below.
 
-
 <a name="api"></a>
 ## API
 
-The API provides various endpoints for retrieving badges classes currently indexed by the directory - see below for details.
-
+The API provides various endpoints for retrieving badges classes currently indexed by the directory.
 
 <a name="search"></a>
 ### Search
 
 Returns all badges matching the specified search parameters.
-
 
 __Available Request Parameters__
 
@@ -57,22 +54,15 @@ __Available Request Parameters__
 | &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return&nbsp; |
 | &nbsp;`page`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;page of results to return&nbsp; |
 
-
 ___At least one search parameter is required.___
 
-
-
 __Expected Request__
-
 
 {% highlight text %}
 /search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
 {% endhighlight %}
 
-
-
 __Example Requests__
-
 
 {% highlight text %}
 /search?q=maker
@@ -82,10 +72,7 @@ __Example Requests__
 /search?q=delegate&issuer=achievery
 {% endhighlight %}
 
-
-
 __Expected Response__
-
 
 JSON-structured array of badge classes matching the search parameters, or an empty array if no matching badges are returned.
 
@@ -129,10 +116,7 @@ JSON-structured array of badge classes matching the search parameters, or an emp
 }
 {% endhighlight %}
 
-
-
 __Response Structure__
-
 
 * data `[ ]`
 	* name
@@ -152,10 +136,7 @@ __Response Structure__
 	* issuerResolved
 		* name
 
-
-
 __Potential Errors__
-
 
 {% highlight json %}
 {
@@ -164,32 +145,22 @@ __Potential Errors__
 }
 {% endhighlight %}
 
-
 <a name="recent"></a>
 ### Recent
 
 Returns all recently indexed badges.
 
-
-
 __Available Request Parameters__
-
 
 ___NONE___
 
-
-
 __Expected Request__
-
 
 {% highlight text %}
 /recent
 {% endhighlight %}
 
-
-
 __Expected Response__
-
 
 JSON-structured array of badge classes recently indexed by the directory.
 
@@ -233,10 +204,7 @@ JSON-structured array of badge classes recently indexed by the directory.
 }
 {% endhighlight %}
 
-
-
 __Response Structure__
-
 
 * data `[ ]`
 	* name
@@ -256,41 +224,26 @@ __Response Structure__
 	* issuerResolved
 		* name
 
-
-
 __Potential Errors__
 
-
 ___NONE___
-
-
-
 
 <a name="badge-location"></a>
 ### Badge Location
 
 Returns a specific badge class, based on its location URL (encoded).
 
-
-
 __Available Request Parameters__
-
 
 ___NONE___
 
-
-
 __Expected Request__
-
 
 {% highlight text %}
 /http%3A%2F%2Fissuersite.com%2Fbadgeclass
 {% endhighlight %}
 
-
-
 __Expected Response__
-
 
 JSON-structured object containing requested badge class.
 
@@ -326,10 +279,7 @@ JSON-structured object containing requested badge class.
 }
 {% endhighlight %}
 
-
-
 __Response Structure__
-
 
 * data
 	* name
@@ -349,10 +299,7 @@ __Response Structure__
 	* issuerResolved
 		* name
 
-
-
 __Potential Errors__
-
 
 {% highlight json %}
 {
@@ -361,9 +308,6 @@ __Potential Errors__
 }
 {% endhighlight %}
 
-
-
-
 <a name="tags"></a>
 ### Tags
 
@@ -371,31 +315,21 @@ Returns all tags in the directory, _sorted by most popular_.
 
 ___You can use the tag information to carry out [search](#search) queries.___
 
-
-
 __Available Request Parameters__
-
 
 | &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
 | &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return&nbsp; |
 
-
 ___Parameter not required.___
 
-
-
 __Expected Request__
-
 
 {% highlight text %}
 /tags?limit=10
 {% endhighlight %}
 
-
-
 __Expected Response__
-
 
 JSON-structured array of badge tags together with the number of times each tag is used by badges currently in the directory.
 
@@ -416,23 +350,14 @@ JSON-structured array of badge tags together with the number of times each tag i
 }
 {% endhighlight %}
 
-
-
 __Response Structure__
-
 
 * data
 	* tag name : number of occurrences
 
-
-
 __Potential Errors__
 
-
 ___NONE___
-
-
-
 
 <a name="libraries-and-examples"></a>
 ## Libraries and Examples
