@@ -4,57 +4,70 @@ layout: site
 
 # Retrieve Badges (API)
 
-The directory API endpoints allow you to query and retrieve badges. Currently the directory stores badge classes only, although further developments are under discussion. With the API, you can retrieve:
+The directory API endpoints allow you to retrieve currently indexed badges. At the moment the directory stores badge classes only, although further developments are under discussion. 
+
+With the API, you can retrieve:
 
 * badges matching search parameters
- * _including full text search, tags, badge or issuer name_
+	* _including full text search, tags, badge or issuer name_
 * badges recently added to the directory
 * specific badges using the badge class location
 * badge tags
- * _which you can then use to query for badges_
+	* _which you can then use to query for badges_
 
-The API returns a JSON-formatted list of badge classes, which your site or application can then parse and present in any way you choose. The badge class data includes information about what a badge represents, who issued it and the criteria for earning it. You can see the information presented within a Web interface using the [example browser](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent). For more information about Badge Classes in Open Badges, see the [specification documents](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
+The API returns a JSON-formatted list of badge classes, which your site or application can then parse and present in any way you choose. The badge class data includes information about what a badge represents, who issued it and the criteria for earning it. 
+
+You can see the badge class information for badges currently in the directory, presented within a Web interface, using the [example browser](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent). For more information about Badge Classes in Open Badges, see the [specification documents](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 
 * [API Explorer](#api-explorer)
 * [API](#api)
- * [Search](#search)
- * [Recent](#recent)
- * [Badge Location](#badge-location)
- * [Tags](#tags)
+	* [Search](#search)
+	* [Recent](#recent)
+	* [Badge Location](#badge-location)
+	* [Tags](#tags)
 * [Libraries and Examples](#libraries-and-examples)
 
+<a name="api-explorer"></a>
 ## API Explorer
 
-For an interactive experience with the API, visit the [API Explorer](http://test-openbadges-directory.herokuapp.com/developers/api-explorer#!/search/search). This will load up a swagger powered interface that can directly invoke the API endpoints listed below.
+For an interactive experience with the API, visit the [API Explorer](http://test-openbadges-directory.herokuapp.com/developers/api-explorer#!/search/search). This will load up a swagger-powered interface that can directly invoke the API endpoints listed below.
 
+<a name="api"></a>
 ## API
 
-The API provides various endpoints for retrieving badges classes currently indexed by the directory:
+The API provides various endpoints for retrieving badges classes currently indexed by the directory - see below for details.
 
+<a name="search"></a>
 ### Search
 
 Returns all badges matching the specified search parameters.
 
-#### Available Request Parameters
+__Available Request Parameters__
 
-|__Parameter__|__Type__|__Description__|
+
+| __Parameter__ | __Type__ | __Description__ |
 |:--|:--|:--|
-|`q`|_string_|text to use in full text search of badges|
-|`tags`|_string_|comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___|
-|`name`|_string_|name of badge class to return|
-|`issuer`|_string_|name of issuer whose badges should be returned|
-|`limit`|_integer_|how many results to return|
-|`page`|_integer_|page of results to return|
+| `q` | _string_ | text to use in full text search of badges |
+| `tags` | _string_ | comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___ |
+| `name` | _string_ | name of badge class to return |
+| `issuer` | _string_ | name of issuer whose badges should be returned |
+| `limit` | _integer_ | how many results to return |
+| `page` | _integer_ | page of results to return |
+
 
 ___At least one search parameter is required.___
 
-#### Expected Request
+
+__Expected Request__
+
 
 {% highlight text %}
 /search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
 {% endhighlight %}
 
-##### Example Requests
+
+__Example Requests__
+
 
 {% highlight text %}
 /search?q=maker
@@ -64,7 +77,9 @@ ___At least one search parameter is required.___
 /search?q=delegate&issuer=achievery
 {% endhighlight %}
 
-#### Expected Response
+
+__Expected Response__
+
 
 JSON-structured array of badge classes matching the search parameters, or an empty array if no matching badges are returned.
 
@@ -108,7 +123,9 @@ JSON-structured array of badge classes matching the search parameters, or an emp
 }
 {% endhighlight %}
 
-##### Response Structure
+
+__Response Structure__
+
 
 * data `[ ]`
 	* name
@@ -128,7 +145,9 @@ JSON-structured array of badge classes matching the search parameters, or an emp
 	* issuerResolved
 		* name
 
-#### Potential Errors
+
+__Potential Errors__
+
 
 {% highlight json %}
 {
@@ -137,21 +156,29 @@ JSON-structured array of badge classes matching the search parameters, or an emp
 }
 {% endhighlight %}
 
+
+<a name="recent"></a>
 ### Recent
 
 Returns all recently indexed badges.
 
-#### Available Request Parameters
+
+__Available Request Parameters__
+
 
 ___NONE___
 
-#### Expected Request
+
+__Expected Request__
+
 
 {% highlight text %}
 /recent
 {% endhighlight %}
 
-#### Expected Response
+
+__Expected Response__
+
 
 JSON-structured array of badge classes recently indexed by the directory.
 
@@ -195,7 +222,9 @@ JSON-structured array of badge classes recently indexed by the directory.
 }
 {% endhighlight %}
 
-##### Response Structure
+
+__Response Structure__
+
 
 * data `[ ]`
 	* name
@@ -215,25 +244,36 @@ JSON-structured array of badge classes recently indexed by the directory.
 	* issuerResolved
 		* name
 
-#### Potential Errors
+
+__Potential Errors__
+
 
 ___NONE___
 
+
+
+<a name="badge-location"></a>
 ### Badge Location
 
 Returns a specific badge class, based on its location URL (encoded).
 
-#### Available Request Parameters
+
+__Available Request Parameters__
+
 
 ___NONE___
 
-#### Expected Request
+
+__Expected Request__
+
 
 {% highlight text %}
 /http%3A%2F%2Fissuersite.com%2Fbadgeclass
 {% endhighlight %}
 
-#### Expected Response
+
+__Expected Response__
+
 
 JSON-structured object containing requested badge class.
 
@@ -269,7 +309,9 @@ JSON-structured object containing requested badge class.
 }
 {% endhighlight %}
 
-##### Response Structure
+
+__Response Structure__
+
 
 * data
 	* name
@@ -289,7 +331,9 @@ JSON-structured object containing requested badge class.
 	* issuerResolved
 		* name
 
-#### Potential Errors
+
+__Potential Errors__
+
 
 {% highlight json %}
 {
@@ -298,27 +342,37 @@ JSON-structured object containing requested badge class.
 }
 {% endhighlight %}
 
+
+
+<a name="tags"></a>
 ### Tags
 
 Returns all tags in the directory, _sorted by most popular_.
 
 ___You can use the tag information to carry out [search](#search) queries.___
 
-#### Available Request Parameters
 
-|__Parameter__|__Type__|__Description__|
+__Available Request Parameters__
+
+
+| __Parameter__ | __Type__ | __Description__ |
 |:--|:--|:--|
-|`limit`|_integer_|how many results to return|
+| `limit` | _integer_ | how many results to return |
+
 
 ___Parameter not required.___
 
-#### Expected Request
+
+__Expected Request__
+
 
 {% highlight text %}
 /tags?limit=10
 {% endhighlight %}
 
-#### Expected Response
+
+__Expected Response__
+
 
 JSON-structured array of badge tags together with the number of times each tag is used by badges currently in the directory.
 
@@ -336,16 +390,23 @@ JSON-structured array of badge tags together with the number of times each tag i
     },
     ...
   ]
-}{% endhighlight %}
+}
+{% endhighlight %}
 
-##### Response Structure
+
+__Response Structure__
+
 
 * data
 	* tag name : number of occurrences
 
-#### Potential Errors
+
+__Potential Errors__
+
 
 ___NONE___
+
+
 
 ## Libraries and Examples
 
