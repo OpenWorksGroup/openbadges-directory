@@ -48,7 +48,7 @@ Returns all badges matching the specified search parameters.
 
 __Available Request Parameters__
 
-| __Parameter__ | __Type__ | __Description__ |
+| &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
 | `q` | _string_ | text to use in full text search of badges |
 | `tags` | _string_ | comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___ |
