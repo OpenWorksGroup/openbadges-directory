@@ -14,4 +14,3 @@ exclude:
 markdown: rdiscount
 pygments: false
 port: 9876
-baseurl: /openbadges-directory
