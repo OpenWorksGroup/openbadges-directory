@@ -127,6 +127,8 @@ foreach ($dir_data as $item){
 }
 {% endhighlight %}
 
+We select the badge name, writing it out as a heading element, then the badge image is displayed in an `img` element and finally the issuer URL is presented as a link, using the issuer name as the clickable text.
+
 For the data above, the code would output something like this for each badge:
 
 {% highlight html %}
@@ -141,7 +143,7 @@ With a little extra markup plus some CSS, here is the result:
 
 Here's the code in a complete PHP page for reference:
 
-{% highlight php %}
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <head>
