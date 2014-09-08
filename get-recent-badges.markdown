@@ -109,13 +109,13 @@ Your code can select whichever data items you want to display in your site or ap
 
 In the PHP example, you could decode the JSON returned from the API as follows:
 
-{% highlight php %}
+{% highlight php startinline %}
 $dir_data = json_decode($result, true);
 {% endhighlight %}
 
 This will place the data values from the JSON in arrays, which you can then iterate through and query for the items you are interested in. For example:
 
-{% highlight php %}
+{% highlight php startinline %}
 //the data array
 foreach ($dir_data as $item){
   //each badge in the array
