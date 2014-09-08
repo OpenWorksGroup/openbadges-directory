@@ -19,7 +19,7 @@ http://directory.openbadges.org/recent
 http://directory.openbadges.org/recent?page=2&limit=10
 {% endhighlight %}
 
-The first example will return all recent badges, while the second will return the second page where each page contains 10 badge classes.
+The first example will return all recent badges, while the second will return the second page, where each page contains 10 badge classes.
 
 ### Implementing the Request
 
@@ -143,7 +143,7 @@ With a little extra markup plus some CSS, here is the result:
 
 Here's the code in a complete PHP page for reference:
 
-{% highlight html %}
+{% highlight php %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -191,7 +191,7 @@ foreach ($dir_data as $item){
 
 ### Parsing and Output in Node
 
-Let's do the same in a node.js app. Using the example above as a starting point, inside the `end` function we can parse the badge class data as follows:
+Let's do the same in a node.js app. Using the example above as a starting point, inside the `end` function, we can parse the badge class data as follows:
 
 {% highlight js %}
 var badges = JSON.parse(badgeData).data;
@@ -209,7 +209,7 @@ for(b=0; b<badges.length; b++){
 res.send(out);
 {% endhighlight %}
 
-With a little additional markup and CSS, the results are the same as the PHP example image above. A more complete code excerpt follows:
+With a little additional markup and CSS, the results are the same as the PHP example image above. The code could appear in the context of a node app as follows:
 
 {% highlight js %}
 app.get('/badges', function(req, res){
