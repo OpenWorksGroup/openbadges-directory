@@ -25,7 +25,9 @@ The first example will return all recent badges, while the second will return th
 
 Your approach to calling the endpoint will depend on the language or technology you are working with. The following demonstrates how you might carry out a `GET` request on the `/recent` endpoint in PHP:
 
-{% highlight php %}
+{% highlight php startinline %}
+<?php
+
 $curl = curl_init();
 //recent endpoint url
 $url="http://directory.openbadges.org/recent";
@@ -34,6 +36,8 @@ curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec($curl);
 curl_close($curl);
+
+?>
 {% endhighlight %}
 
 When this code executes, the `result` variable will contain the returned JSON badge data from the API. 
