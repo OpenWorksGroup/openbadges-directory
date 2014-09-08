@@ -253,4 +253,4 @@ Although these simple examples produce trivial results, you can begin to see how
 
 To learn more about the badge class structure, see the [Specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 
-For the other Directory endpoints, see <a href="{{ site.base-url }}{{ post.url }}/directory-api">Retrieve Badges</a>.
+For the other Directory endpoints, see <a href="{{ site.url }}{{ post.url }}/directory-api">Retrieve Badges</a>.
