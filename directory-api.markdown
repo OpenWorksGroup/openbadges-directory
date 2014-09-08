@@ -230,6 +230,8 @@ __Potential Errors__
 
 ___NONE___
 
+_For more on the `/recent` endpoint, see <a href="{{ site.url }}{{ post.url }}/get-recent-badges">Get Recent Badges</a>._
+
 <a name="badge-location"></a>
 ### Badge Location
 
