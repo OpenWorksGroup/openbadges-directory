@@ -333,19 +333,22 @@ __Expected Request__
 
 __Expected Response__
 
-JSON-structured array of badge tags together with the number of times each tag is used by badges currently in the directory.
+JSON-structured array of badge tags together with the number of times each tag occurs (for badges currently in the directory).
 
 {% highlight json %}
 {
   "data": [
     {
-      "technology": 100
+      "tag": "technology",
+      "count": 100
     },
     {
-      "science": 75
+      "tag": "science",
+      "count": 60
     },
     {
-      "design": 53
+      "tag": "design",
+      "count": 40
     },
     ...
   ]
@@ -355,7 +358,8 @@ JSON-structured array of badge tags together with the number of times each tag i
 __Response Structure__
 
 * data
-	* tag name : number of occurrences
+	* tag
+	* count
 
 __Potential Errors__
 
