@@ -369,6 +369,8 @@ __Potential Errors__
 
 ___NONE___
 
+_For more on the `/tags` endpoint, including an overview of how you can combine it with the `/search` endpoint, see <a href="find-badge-tags">Find Badge Tags</a>._
+
 <a name="libraries-and-examples"></a>
 ## Libraries and Examples
 
