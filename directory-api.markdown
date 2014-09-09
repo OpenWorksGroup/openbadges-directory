@@ -147,6 +147,8 @@ __Potential Errors__
 }
 {% endhighlight %}
 
+_For more on the `/search` endpoint, see <a href="search-for-badges">Search For Badges</a>._
+
 <a name="recent"></a>
 ### Recent
 
