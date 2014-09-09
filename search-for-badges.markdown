@@ -16,7 +16,7 @@ The search endpoint is `/search`, with several optional parameters - __although 
 
 * `q` - string to use in full-text search of badge classes
 * `tags` - comma-separated list of strings representing badge tags to match
-		* _more than one tag results in an AND condition, so the API will return only those badge classes with all of the tags you include_
+	* _more than one tag results in an AND condition, so the API will return only those badge classes with all of the tags you include_
 * `name` - string to match in the badge class name
 * `issuer` - string to match in the badge issuer name
 
