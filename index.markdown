@@ -67,7 +67,8 @@ and to serve as a starting point for an actual badge directory API for the gener
 There are lots of questions (and discussions) surrounding how a directory would best work, and what it would be implemented on.
 
 In terms of crawling and indexing badges:
-* [https://github.com/mozilla/openbadges-discussion/issues/1 - badge indexing](https://github.com/mozilla/openbadges-discussion/issues/1)
+
+[https://github.com/mozilla/openbadges-discussion/issues/1 - badge indexing](https://github.com/mozilla/openbadges-discussion/issues/1)
 
 In terms of extending badges (and what impact that may have on searching and retrieving):
 
