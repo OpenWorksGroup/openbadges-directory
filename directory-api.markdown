@@ -17,7 +17,9 @@ With the API, you can retrieve:
 * badge tags
 	* _which you can then use to search for badges_
 
-The API returns a JSON-formatted list of badge classes, which your site or application can then parse and present in any way you choose. The badge class data includes information about what a badge represents, who issued it and the criteria for earning it. 
+___The API uses ElasticSearch.___
+
+The Directory API endpoints return JSON-formatted badge class data, which your site or application can then parse and present in any way you choose. The badge class data includes information about what a badge represents, who issued it and the criteria for earning it. 
 
 You can see the badge class information for badges currently in the directory, presented within a Web interface, using the [example browser](http://directory.openbadges.org/examples/browser/#/recent). For more information about Badge Classes in Open Badges, see the [specification documents](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 
@@ -53,7 +55,7 @@ __Available Request Parameters__
 | &nbsp;`tags`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;comma-separated list of badge tags to match in returned badges - ___multiple tags create AND condition___&nbsp; |
 | &nbsp;`name`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;name of badge class to return&nbsp; |
 | &nbsp;`issuer`&nbsp; | &nbsp;_string_&nbsp; | &nbsp;name of issuer whose badges should be returned&nbsp; |
-| &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return per page&nbsp; |
+| &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return per page (default 10, max 100)&nbsp; |
 | &nbsp;`page`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;page of results to return&nbsp; |
 
 ___At least one search parameter is required.___
@@ -325,7 +327,7 @@ __Available Request Parameters__
 
 | &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
-| &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return&nbsp; |
+| &nbsp;`limit`&nbsp; | &nbsp;_integer_&nbsp; | &nbsp;how many results to return (default 10, max 100)&nbsp; |
 
 ___Parameter not required.___
 
