@@ -64,6 +64,8 @@ When you have your badge class listing ready, copy the URL into the below form, 
 This API is a prototype to integrate with the initial version of [openbadges-discovery](https://github.com/mozilla/openbadges-discovery),
 and to serve as a starting point for an actual badge directory API for the general badge community/ecosystem.
 
+The prototype is hosted on a free Heroku instance.
+
 There are lots of questions (and discussions) surrounding how a directory would best work, and what it would be implemented on.
 
 * In terms of crawling and indexing badges:
