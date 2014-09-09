@@ -24,6 +24,7 @@ You can also attach pagination parameters:
 
 * `page` - integer representing which page of results to return
 * `limit` - integer specifying how many results to return per page
+	* _default limit is 10, maximum value is 100_
 
 ### Examples
 
