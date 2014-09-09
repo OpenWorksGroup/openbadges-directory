@@ -257,7 +257,7 @@ for(b=0; b<badges.length; b++){
 res.send(out);
 {% endhighlight %}
 
-The page would display similarly to the picture above with a little extra styling:
+The page display would be the same as the picture above with a little extra styling:
 
 {% highlight js %}
 app.get('/badges', function(req, res){
