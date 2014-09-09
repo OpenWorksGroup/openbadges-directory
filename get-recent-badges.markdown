@@ -105,7 +105,9 @@ When you call the `/recent` endpoint, the Directory API returns a JSON array inc
 
 Your code can select whichever data items you want to display in your site or application.
 
-### Parsing and Output in PHP
+### Parsing and Output
+
+#### PHP Example
 
 In the PHP example, you could decode the JSON returned from the API as follows:
 
@@ -189,7 +191,7 @@ foreach ($dir_data as $item){
 </html>
 {% endhighlight %}
 
-### Parsing and Output in Node
+#### Node Example
 
 Let's do the same in a node.js app. Using the example above as a starting point, inside the `end` function, we can parse the badge class data as follows:
 
