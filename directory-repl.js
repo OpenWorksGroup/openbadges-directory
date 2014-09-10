@@ -10,3 +10,4 @@ replServer.context.ElasticSearch = Elastic;
 replServer.context.elasticSearch = instance;
 replServer.context.deleteByEndpoint = instance.deleteByEndpoint.bind(instance);
 replServer.context.deleteIndex = instance.deleteIndex.bind(instance);
+replServer.context.deleteById = instance.deleteById.bind(instance);
