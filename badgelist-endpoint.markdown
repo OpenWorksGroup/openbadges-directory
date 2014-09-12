@@ -8,7 +8,7 @@ To have your badges indexed for inclusion in the Directory, you need to expose a
 
 ## BadgeKit Users
 
-If you have an account on the Mozilla-hosted instance of BadgeKit at http://badgekit.org, your public badges will be automatically indexed by the Directory.
+If you have an account on the Mozilla-hosted instance of BadgeKit at [http://badgekit.org](http://badgekit.org), your public badges will be automatically indexed by the Directory.
 
 If you're hosting your own instance of BadgeKit, your badge list will be automatically created at a predefined location. The location is the URL for your BadgeKit API, followed by `/public/badges`, for example:
 
@@ -31,7 +31,7 @@ You can check this by visiting the URL in your browser - you should see your bad
 }
 {% endhighlight %}
 
-This should work automatically as long as your BadgeKit API instance is up to date with the code from the GitHub repo: https://github.com/mozilla/badgekit-api
+This should work automatically as long as your BadgeKit API instance is up to date with the code from the GitHub repo: [https://github.com/mozilla/badgekit-api](https://github.com/mozilla/badgekit-api)
 
 ## Creating your Badge List
 
@@ -39,4 +39,4 @@ If you have your own badge issuing site or application and want to register your
 
 _more guidance coming soon_
 
-Once you have your badge list URL ready, you can register it along with your other details at http://directory.openbadges.org.
+Once you have your badge list URL ready, you can register it along with your other details at [http://directory.openbadges.org](http://directory.openbadges.org).
