@@ -316,6 +316,8 @@ __Potential Errors__
 }
 {% endhighlight %}
 
+_For more on the `/{location}` endpoint, see <a href="badge-from-location">Get a Badge from its Location</a>._
+
 <a name="tags"></a>
 ### Tags
 
