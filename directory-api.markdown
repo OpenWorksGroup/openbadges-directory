@@ -245,7 +245,7 @@ ___NB:___ The location of a badge class is found within the `_directory._locatio
 
 __Available Request Parameters__
 
-___NONE___
+The encoded badge class location, appended to the Directory URL.
 
 __Expected Request__
 
