@@ -24,7 +24,7 @@ http://directory.openbadges.org/http%3A%2F%2Fapi.badgekit.org%2Fpublic%2Fsystems
 These represent the following badge locations:
 
 {% highlight text %}
-http://directory.openbadges.org/http://issuersite.com/badgeclass
+http://issuersite.com/badgeclass
 http://api.badgekit.org/public/systems/openbadges-badges/badges/open-badgineer
 {% endhighlight %}
 
