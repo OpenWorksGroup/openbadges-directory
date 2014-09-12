@@ -6,6 +6,11 @@ layout: site
 
 To have your badges indexed for inclusion in the Directory, you need to expose a list of badge class locations at the URL you register. This list should be JSON-formatted as we will see below. How you create the JSON list is entirely up to you, as long as the URL responds with it when the Directory indexes (and regularly reindexes) it.
 
+* [BadgeKit Users](#badgekit)
+* [Creating your Badge List](#creating)
+* [Registering](#register)
+
+<a name="badgekit"></a>
 ## BadgeKit Users
 
 If you have an account on the Mozilla-hosted instance of BadgeKit at [http://badgekit.org](http://badgekit.org), your public badges will be automatically indexed by the Directory.
@@ -33,10 +38,16 @@ You can check this by visiting the URL in your browser - you should see your bad
 
 This should work automatically as long as your BadgeKit API instance is up to date with the code from the GitHub repo: [https://github.com/mozilla/badgekit-api](https://github.com/mozilla/badgekit-api)
 
+<a name="creating"></a>
 ## Creating your Badge List
 
 If you have your own badge issuing site or application and want to register your badges for indexing by the Directory, you will need to create an endpoint at which your badge class locations are listed in the above structure.
 
 _more guidance coming soon_
 
+<a name="register"></a>
+## Registering
+
 Once you have your badge list URL ready, you can register it along with your other details at [http://directory.openbadges.org](http://directory.openbadges.org).
+
+The Directory will reindex your badge list every 24 hours. This means that the Directory data will update with any changes you make to the badge classes in your list, for example by adding or removing badges.
