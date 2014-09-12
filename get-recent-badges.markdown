@@ -19,7 +19,7 @@ http://directory.openbadges.org/recent
 http://directory.openbadges.org/recent?page=2&limit=10
 {% endhighlight %}
 
-The first example will return all recent badges, while the second will return the second page, where each page contains 10 badge classes.
+The first example will return all recent badges, while the second will return the second page, where each page contains 10 badge classes. The endpoint returns up to 100 badges.
 
 ### Implementing the Request
 
