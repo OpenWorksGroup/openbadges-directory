@@ -8,6 +8,7 @@ To have your badges indexed for inclusion in the Directory, you need to expose a
 
 * [BadgeKit Users](#badgekit)
 * [Creating your Badge List](#creating)
+	* [PHP Example](#php-example)
 * [Registering](#register)
 
 <a name="badgekit"></a>
@@ -45,6 +46,7 @@ If you have your own badge issuing site or application and want to register your
 
 ___To issue Open Badges within the OBI, you need a badge class JSON file for each badge you issue, hosted at a stable location - if you're just getting started, see [New Issuers: Give Yourself a Badge](https://github.com/mozilla/openbadges/wiki/New-Issuers:-Give-Yourself-a-Badge).___
 
+<a name="php-example"></a>
 ### PHP Example
 
 Let's look at how you might create your badge list in a PHP site with the badge class data stored in a MySQL database.
