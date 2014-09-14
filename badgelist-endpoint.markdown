@@ -43,7 +43,48 @@ This should work automatically as long as your BadgeKit API instance is up to da
 
 If you have your own badge issuing site or application and want to register your badges for indexing by the Directory, you will need to create an endpoint at which your badge class locations are listed in the above structure.
 
-_more guidance coming soon_
+___To issue Open Badges within the OBI, you need a badge class JSON file for each badge you issue, hosted at a stable location - if you're just getting started, see [New Issuers: Give Yourself a Badge](https://github.com/mozilla/openbadges/wiki/New-Issuers:-Give-Yourself-a-Badge).___
+
+### PHP Example
+
+Let's look at how you might create your badge list in a PHP site with the badge class data stored in a MySQL database.
+
+Say your database included a table named `badges`, in which the `badgeclass` field included the URL of the badge class JSON - this is the value you would include for each badge in your list.
+
+Your code could query the database and build the JSON badge list using something like the following approach:
+
+{% highlight php %}
+<?php
+//include your hostname, username, password and database name
+$conn=mysqli_connect("host", "user", "pwd", "dbname");
+
+//query the table with the badge class locations in it
+$result = mysqli_query($conn, "SELECT * from badges");
+
+//send json
+header('Content-Type: application/json');
+
+//start to write the JSON
+echo '{ "badgelist":[';
+
+//iterate through the badges
+$first = true;
+while($row=mysqli_fetch_array($result)){
+	if($first) {
+		$first = false;
+	} else {
+		echo ',';
+	}
+	//write the badge class location out
+	echo '{ "location": "'.$row['badgeclass'].'" }';
+}
+echo ']}';
+
+mysqli_close($db);
+?>
+{% endhighlight %}
+
+When you have your script prepared, visit it in the browser to ensure that it writes out the correct structure (as above). Then you can register the location your script is running at to have your badge classes indexed by the Directory.
 
 <a name="register"></a>
 ## Registering
