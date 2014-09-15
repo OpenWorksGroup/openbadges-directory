@@ -31,7 +31,7 @@ To register via the API endpoint, you need to supply your registration informati
 | &nbsp;`description`&nbsp; | &nbsp;_OPTIONAL_&nbsp; | &nbsp;Overview of you and your purpose in using the Directory&nbsp; |
 | &nbsp;`organization`&nbsp; | &nbsp;_OPTIONAL_&nbsp; | &nbsp;Your organization name&nbsp; |
 
-__All parameters are strings.__
+___All parameters are strings.___
 
 ## Expected Request
 
