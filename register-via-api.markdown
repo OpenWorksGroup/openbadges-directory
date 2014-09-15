@@ -24,10 +24,10 @@ To register via the API endpoint, you need to supply your registration informati
 
 | &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
-| &nbsp;`endpoint`&nbsp; | &nbsp;_string_ (__required__)&nbsp; | &nbsp;The URL of your JSON badge list&nbsp; |
-| &nbsp;`name`&nbsp; | &nbsp;_string_ (__required__)&nbsp; | &nbsp;Your name&nbsp; |
-| &nbsp;`website`&nbsp; | &nbsp;_string_ (__required__)&nbsp; | &nbsp;The URL of your website&nbsp; |
-| &nbsp;`email`&nbsp; | &nbsp;_string_ (__required__)&nbsp; | &nbsp;Your contact email address&nbsp; |
+| &nbsp;`endpoint`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;The URL of your JSON badge list&nbsp; |
+| &nbsp;`name`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;Your name&nbsp; |
+| &nbsp;`website`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;The URL of your website&nbsp; |
+| &nbsp;`email`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;Your contact email address&nbsp; |
 | &nbsp;`description`&nbsp; | &nbsp;_string_ (___optional___)&nbsp; | &nbsp;Overview of you and your purpose in using the Directory&nbsp; |
 | &nbsp;`organization`&nbsp; | &nbsp;_string_ (___optional___)&nbsp; | &nbsp;Your organization name&nbsp; |
 
@@ -35,10 +35,10 @@ To register via the API endpoint, you need to supply your registration informati
 
 {% highlight json %}
 {
-  "endpoint": "http://issuersite.com/badgelist"
+  "endpoint": "http://issuersite.com/badgelist",
   "name": "Badge Issuer",
   "website": "http://issuersite.com",
-  "email": "admin@issuersite.com"
+  "email": "admin@issuersite.com",
   "description": "We love issuing badges.",
   "organization": "Issuer Organization"
 }
