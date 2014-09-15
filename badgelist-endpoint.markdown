@@ -9,6 +9,7 @@ To have your badges indexed for inclusion in the Directory, you need to expose a
 * [BadgeKit Users](#badgekit)
 * [Creating your Badge List](#creating)
 	* [PHP Example](#php-example)
+	* [Node Example](#node-example)
 * [Registering](#register)
 
 <a name="badgekit"></a>
@@ -86,7 +87,49 @@ mysqli_close($db);
 ?>
 {% endhighlight %}
 
-When you have your script prepared, visit it in the browser to ensure that it writes out the correct structure (as above). Then you can register the location your script is running at to have your badge classes indexed by the Directory.
+When you have your script prepared, visit it in the browser to ensure that it writes out the correct structure (as above). Then you can [register](#register) the location your script is running at to have your badge classes indexed by the Directory.
+
+<a name="node-example"></a>
+### Node Example
+
+Let's briefly look at how you could achieve the same result with your badge list in a node.js app. Assuming the same details as the PHP example above, with a MySQL database holding the badge class location details in a column named `badgeclass` within a table named `badges`, your code might look something like this:
+
+{% highlight js %}
+app.get('/badgelist', function(req, res){
+	res.setHeader('Content-Type', 'application/json');
+	//database details
+	var conn =  mysql.createConnection({
+		host : 'host',
+		user : 'user',
+		password: 'pwd'
+		});
+	conn.connect();
+	//database name
+	conn.query('use dbname');
+	var badgeQuery = 'select * from badges';
+	//start json output
+	var out='{ "badgelist": [';
+	conn.query(badgeQuery, function(err, rows){
+	if(err)	{
+		throw err;
+	}
+	else{ 
+		var i;
+		for(i=0; i<rows.length; i++){ 
+			//location is in badgeclass field
+			out+='{ "location": "'+rows[i].badgeclass+'" } ';
+			if(i<rows.length-1) out+=',';
+			}
+		out+=']}';
+		res.send(out);
+		}
+	});
+});
+{% endhighlight %}
+
+The code connects to the database and queries the relevant table. Then it writes the JSON out, with the `badgelist` array including a `location` entry for each badge class to be indexed by the Directory.
+
+As before, you could check that your page returns the correct structure by visiting the `badgelist` page from your node app in the browser. Then you would be ready to [register](#register) the endpoint with the Directory.
 
 <a name="register"></a>
 ## Registering
