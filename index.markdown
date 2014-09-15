@@ -56,6 +56,8 @@ Given the above value in the `badgelist` array, the Directory would expect to fi
 }
 {% endhighlight %}
 
+For more guidance on creating your badge list (including BadgeKit users), see [The Badge List Endpoint](badgelist-endpoint).
+
 When you have your badge class listing ready, copy the URL into the below form, together with your other details.
 
 {% include registration-form.html %}
