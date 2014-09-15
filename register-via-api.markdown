@@ -24,12 +24,14 @@ To register via the API endpoint, you need to supply your registration informati
 
 | &nbsp;__Parameter__&nbsp; | &nbsp;__Status__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
-| &nbsp;`endpoint`&nbsp; | &nbsp;<strong>required</strong>&nbsp; | &nbsp;The URL of your JSON badge list&nbsp; |
-| &nbsp;`name`&nbsp; | &nbsp;required&nbsp; | &nbsp;Your name&nbsp; |
-| &nbsp;`website`&nbsp; | &nbsp;required&nbsp; | &nbsp;The URL of your website&nbsp; |
-| &nbsp;`email`&nbsp; | &nbsp;required&nbsp; | &nbsp;Your contact email address&nbsp; |
-| &nbsp;`description`&nbsp; | &nbsp;_optional_&nbsp; | &nbsp;Overview of you and your purpose in using the Directory&nbsp; |
-| &nbsp;`organization`&nbsp; | &nbsp;_optional_&nbsp; | &nbsp;Your organization name&nbsp; |
+| &nbsp;`endpoint`&nbsp; | &nbsp;REQUIRED&nbsp; | &nbsp;The URL of your JSON badge list&nbsp; |
+| &nbsp;`name`&nbsp; | &nbsp;REQUIRED&nbsp; | &nbsp;Your name&nbsp; |
+| &nbsp;`website`&nbsp; | &nbsp;REQUIRED&nbsp; | &nbsp;The URL of your website&nbsp; |
+| &nbsp;`email`&nbsp; | &nbsp;REQUIRED&nbsp; | &nbsp;Your contact email address&nbsp; |
+| &nbsp;`description`&nbsp; | &nbsp;_OPTIONAL_&nbsp; | &nbsp;Overview of you and your purpose in using the Directory&nbsp; |
+| &nbsp;`organization`&nbsp; | &nbsp;_OPTIONAL_&nbsp; | &nbsp;Your organization name&nbsp; |
+
+__All parameters are strings.__
 
 ## Expected Request
 
