@@ -121,7 +121,7 @@ There are lots of questions (and discussions) surrounding how a directory would 
 * Reach members of the Open Badges team directly on IRC (irc.mozilla.org) in the #badges channel. 
 * Email questions directly to <a href"mailto:badges@mozillafoundation.org">badges@mozillafoundation.org</a> and a member of the team will follow-up.
 * Follow or tweet [@OpenBadges](https://twitter.com/OpenBadges) and [@BadgeAlliance](https://twitter.com/badgealliance).
-* Get involved or submit issues via the [GitHub repo](https://github.com/mozilla/openbadges-directory)
+* Get involved or submit issues via the [GitHub repo](https://github.com/mozilla/openbadges-directory).
 
 ### License
 
