@@ -52,7 +52,7 @@ If your badge list was successfully received:
 {
   "data": { "success": true }
 }
-%}
+{% endhighlight %}
 
 If there was an error processing your badge list:
 
