@@ -48,7 +48,7 @@ ___All parameters are strings.___
 
 ## Expected Response
 
-If your badge list was successfully received:
+If your badge list details were successfully received:
 
 {% highlight json %}
 {
@@ -56,7 +56,7 @@ If your badge list was successfully received:
 }
 {% endhighlight %}
 
-If there was an error processing your badge list:
+If there was an error processing your registration details:
 
 {% highlight json %}
 {
