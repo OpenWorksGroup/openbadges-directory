@@ -22,14 +22,14 @@ To have your badges indexed by the Directory, you must have a badge list endpoin
 
 To register via the API endpoint, you need to supply your registration information via a `POST` request. The parameters are as follows:
 
-| &nbsp;__Parameter__&nbsp; | &nbsp;__Type__&nbsp; | &nbsp;__Description__&nbsp; |
+| &nbsp;__Parameter__&nbsp; | &nbsp;__Required__&nbsp; | &nbsp;__Description__&nbsp; |
 | :------------ | :------- | :-------------- |
-| &nbsp;`endpoint`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;The URL of your JSON badge list&nbsp; |
-| &nbsp;`name`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;Your name&nbsp; |
-| &nbsp;`website`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;The URL of your website&nbsp; |
-| &nbsp;`email`&nbsp; | &nbsp;_string_ (**required**)&nbsp; | &nbsp;Your contact email address&nbsp; |
-| &nbsp;`description`&nbsp; | &nbsp;_string_ (___optional___)&nbsp; | &nbsp;Overview of you and your purpose in using the Directory&nbsp; |
-| &nbsp;`organization`&nbsp; | &nbsp;_string_ (___optional___)&nbsp; | &nbsp;Your organization name&nbsp; |
+| &nbsp;`endpoint`&nbsp; | &nbsp;__required__&nbsp; | &nbsp;The URL of your JSON badge list&nbsp; |
+| &nbsp;`name`&nbsp; | &nbsp;__required__&nbsp; | &nbsp;Your name&nbsp; |
+| &nbsp;`website`&nbsp; | &nbsp;__required__&nbsp; | &nbsp;The URL of your website&nbsp; |
+| &nbsp;`email`&nbsp; | &nbsp;__required__&nbsp; | &nbsp;Your contact email address&nbsp; |
+| &nbsp;`description`&nbsp; | &nbsp;___optional___&nbsp; | &nbsp;Overview of you and your purpose in using the Directory&nbsp; |
+| &nbsp;`organization`&nbsp; | &nbsp;___optional___&nbsp; | &nbsp;Your organization name&nbsp; |
 
 ## Expected Request
 
