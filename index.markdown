@@ -34,6 +34,8 @@ Your badge class list endpoint should return a JSON message with the following s
 
 Include an entry for the location of each badge class JSON file you want the Directory to index - these badges will become discoverable via the [Directory API](directory-api).
 
+___If you're new to badge classes, see the [specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass) and [assertion guide](https://github.com/mozilla/openbadges/wiki/Assertion-Information-for-the-Uninitiated).___
+
 When the Directory retrieves a badge listing, it collects up all of the locations and follows them to their badge class definitions. For instance, let's say you are a badge issuer called badgetastic and your website is http://badgetastic.com. To participate in the Directory, you would be expected to expose an endpoint somewhere (on your site or otherwise) that lists all of the badges you want indexed from badgetastic. The URL is up to you, but assuming you host it on your site and expose the endpoint at http://badgetastic.com/badgelist - hitting that url we would expect to see a listing of badge locations included in a `badgelist` array as in the above example. Each of these locations would be expected to lead to a valid badge class.
 
 {% highlight json %}
