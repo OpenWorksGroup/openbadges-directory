@@ -11,6 +11,7 @@ The Directory is a prototype of an un-opinionated storage and retrieval system f
     * [How Does it Work?](#how-does-it-work)
     * [Approach](#approach)
     * [Additional Resources](#resources)
+    * [Help and Support](#help)
 
 <a name="addbadges" /></a>
 ## Add Your Badges
@@ -112,6 +113,15 @@ There are lots of questions (and discussions) surrounding how a directory would 
 * [Badge Alliance](http://badgealliance.org/)
 * [Directory Working Group](http://wiki.badgealliance.org/index.php/Directory_Working_Group)
 * [Open Badges Directory on Github](https://github.com/mozilla/openbadges-directory)
+
+<a name="help"></a>
+## Help and Support
+
+* Post general questions in the [Community Google Group](http://bit.ly/OBIGeneral) and post technical questions in our [Dev Google Group](http://bit.ly/OBIDev). 
+* Reach members of the Open Badges team directly on IRC (irc.mozilla.org) in the #badges channel. 
+* Email questions directly to badges@mozillafoundation.org and a member of the team will follow-up.
+* Follow or tweet [@OpenBadges](https://twitter.com/OpenBadges) and [@BadgeAlliance](https://twitter.com/badgealliance).
+* Get involved or submit issues via the [GitHub repo](https://github.com/mozilla/openbadges-directory)
 
 ### License
 
