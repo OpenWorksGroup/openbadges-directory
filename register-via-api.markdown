@@ -56,6 +56,8 @@ If your badge list details were successfully received:
 }
 {% endhighlight %}
 
+You should also receive a confirmation email regarding your registration.
+
 If there was an error processing your registration details:
 
 {% highlight json %}
