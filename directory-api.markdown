@@ -40,7 +40,7 @@ For an interactive experience with the API, visit the [API Explorer](http://dire
 <a name="api"></a>
 ## API
 
-The API provides various endpoints for retrieving badges classes currently indexed by the directory.
+The API provides various endpoints for retrieving badge classes currently indexed by the directory.
 
 <a name="search"></a>
 ### Search
