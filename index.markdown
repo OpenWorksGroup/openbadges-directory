@@ -16,7 +16,7 @@ The Directory is a prototype of an un-opinionated storage and retrieval system f
 <a name="addbadges" /></a>
 ## Add Your Badges
 
-At the moment the Directory only indexes badge classes. To have yours indexed, you need a URL at which the badge class locations are listed in a JSON array. _Depending on your site or application, this could be achieved programmatically or simply by creating a file._ 
+At the moment the Directory only indexes badge classes. To have your badges added, you need a URL at which the badge class locations are listed in a JSON array. _Depending on your site or application, this could be achieved programmatically or simply by creating a file._ 
 
 Your badge class list endpoint should return a JSON message with the following simple structure:
 
@@ -34,15 +34,19 @@ Your badge class list endpoint should return a JSON message with the following s
 
 Include an entry for the location of each badge class JSON file you want the Directory to index - these badges will become discoverable via the [Directory API](directory-api).
 
-___If you're new to badge classes, see the [specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass) and [assertion guide](https://github.com/mozilla/openbadges/wiki/Assertion-Information-for-the-Uninitiated).___
+___If you're new to badge classes, each one describes what a single available Open Badge represents - see the [specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass) and [assertion guide](https://github.com/mozilla/openbadges/wiki/Assertion-Information-for-the-Uninitiated) for more.___
 
-When the Directory retrieves a badge listing, it collects up all of the locations and follows them to their badge class definitions. For instance, let's say you are a badge issuer called badgetastic and your website is http://badgetastic.com. To participate in the Directory, you would be expected to expose an endpoint somewhere (on your site or otherwise) that lists all of the badges you want indexed from badgetastic. The URL is up to you, but assuming you host it on your site and expose the endpoint at http://badgetastic.com/badgelist - hitting that url we would expect to see a listing of badge locations included in a `badgelist` array as in the above example. Each of these locations would be expected to lead to a valid badge class.
+When the Directory retrieves a badge listing, it collects up all of the locations and follows them to their badge class definitions. 
+
+For instance, let's say you are a badge issuer called badgetastic and your website is `http://badgetastic.com`. To participate in the Directory, you would expose an endpoint somewhere (_on your site or otherwise_) that lists all of the badgetastic badges you want indexed. The URL is up to you, but assuming you host it on your site and expose the endpoint at `http://badgetastic.com/badgelist` - hitting that url we would expect to see a listing of badge locations included in a `badgelist` array as in the above example. Each of these locations would be expected to lead to a valid JSON badge class.
+
+Let's look at an individual entry from a `badgelist` array:
 
 {% highlight json %}
 "location": "http://badgetastic.com/badge1"
 {% endhighlight %}
  
-Given the above value in the `badgelist` array, the Directory would expect to find a valid badge class JSON listing at http://badgetastic.com/badge1:
+The Directory would expect to find a valid badge class JSON listing at the specified location, e.g.:
 
 {% highlight json %}
 {
@@ -80,12 +84,12 @@ The Directory is a community resource. Any issuer of Open Badges can register to
     * _for example issuer sites offering earners similar badges_
 * for research
 
-The Directory comprises a search engine for badge classes, so if you're an issuer it provides opportunities for people and organizations to find your badges. Client applications using the Directory API can create pathways to opportunity for badge earners.
+The Directory comprises a search engine for badge classes, so if you're an issuer it provides opportunities for people and organizations to find your badges. Client applications using the Directory API can create pathways to opportunity for badge earners. In this way, the Directory helps people within the badging ecosystem to maximize on the interoperability of badges - issuers can potentially connect their communities of earners to badges from other issuers.
 
 <a name="how-does-it-work" /></a>
 ## How Does it Work?
 
-When you register your badge list, it will be indexed and reindexed every 24 hours. This means that if you add or remove badges from the list at your registered endpoint, the Directory will update to reflect that.
+When you register your badge list, it will be indexed, then reindexed every 24 hours. ___This means that if you add or remove badges from the list at your registered endpoint, the Directory will update to reflect that.___
 
 Each time a badge list is registered, the Directory support email receives notification, so any problems will be identified and addressed. Any invalid badges will be indexed but will not be returned from the API endpoints.
 
@@ -93,11 +97,11 @@ Each time a badge list is registered, the Directory support email receives notif
 ## Approach So Far (+ Future)
 
 This API is a prototype to integrate with the initial version of [openbadges-discovery](https://github.com/mozilla/openbadges-discovery),
-and to serve as a starting point for an actual badge Directory API for the general badge community/ecosystem.
+and to serve as a starting point for an actual badge Directory API for the general Open Badges community.
 
 The prototype is hosted on a free Heroku instance.
 
-There are lots of questions (and discussions) surrounding how a directory would best work, and what it would be implemented on.
+There are lots of questions (and discussions) surrounding how a directory would best work, and how it would be implemented.
 
 * In terms of crawling and indexing badges:
     * [https://github.com/mozilla/openbadges-discussion/issues/1 - badge indexing](https://github.com/mozilla/openbadges-discussion/issues/1)
