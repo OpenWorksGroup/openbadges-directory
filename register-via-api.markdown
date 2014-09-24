@@ -4,7 +4,7 @@ layout: site
 
 # Register Using the API
 
-You can register to have your badge list indexed by the Directory using the [registration form](index#addbadges). If you're prefer to use the API, you can do so as follows.
+You can register to have your badge list indexed by the Directory using the [registration form](index#addbadges). If you would prefer to use the API, you can do so as follows.
 
 ## Registration Endpoint
 
