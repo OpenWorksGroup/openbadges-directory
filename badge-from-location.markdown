@@ -14,7 +14,7 @@ Let's look at a simple example of using the `/{location}` endpoint to present th
 
 ## Calling the Location Endpoint
 
-The location endpoint is reached simply by adding the encoded URL of the badge class to the Directory location, as in the following examples:
+The location endpoint is reached simply by adding the encoded URL of the badge class to the Directory URL, as in the following examples:
 
 {% highlight text %}
 http://directory.openbadges.org/http%3A%2F%2Fissuersite.com%2Fbadgeclass
@@ -30,7 +30,7 @@ http://api.badgekit.org/public/systems/openbadges-badges/badges/open-badgineer
 
 You can encode your badge class URL programmatically as we'll see below.
 
-If your site or application is using the other API endpoints to retrieve badge classes, you will find the location of a badge class in its `_directory._location` field.
+If your site or application is using the other API endpoints to retrieve badge classes, you will find the location of a badge class in its `_directory._location` field. _When the Directory indexes an issuer's badge list, it retrieves each badge class from its location - this location is then stored in the Directory alongside the badge class data, allowing users of the API to find the original location of a badge from its Directory listing._
 
 ### Implementing the Request
 
@@ -76,7 +76,7 @@ You would then be able to access the badge data returned from the API in the `en
 
 ## Processing the Badge Class Data
 
-When you call on the location endpoint, the Directory API will return the badge class data for the badge whose location URL you passed as parameter - ___or a "Not Found" if no badge class was found at the specified location___.
+When you call on the location endpoint, the Directory API will return the badge class data for the badge whose location URL you passed as parameter - ___or "Not Found" if no badge class was found at the specified location___.
 
 If your call was a success, the API response will have the following structure:
 
@@ -124,7 +124,7 @@ To decode the JSON returned from the Directory API in PHP, you could use somethi
 $dir_data = json_decode($result, true);
 {% endhighlight %}
 
-The values are then placed in an array, from which you can retrieve each value you want using the field name:
+The values are then placed in an array, from which you can retrieve each item you want using the field name:
 
 {% highlight php startinline %}
 foreach ($dir_data as $item){
@@ -218,7 +218,7 @@ out+="<p><strong>Issuer</strong>: <a href='"+badge.issuer+"'>"+badge.issuerResol
 res.send(out);
 {% endhighlight %}
 
-The result is the same as the PHP example above, with a little extra code:
+The result is the same as the PHP example above, with a little extra code completing the effect:
 
 {% highlight js %}
 app.get('/location', function(req, res){
