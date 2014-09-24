@@ -4,7 +4,7 @@ layout: site
 
 # Get Recent Badges
 
-With the Open Badges Directory API, you can retrieve any badges that have been recently indexed. The `/recent` endpoint accepts optional pagination parameters, allowing you to specify the count and page you want to retrieve. The API returns JSON including the badge class information for each badge returned, which you can then build into your site or application user interface.
+With the Open Badges Directory API, you can retrieve any badges that have been recently indexed, allowing you to create dynamic badge search functionality. The `/recent` endpoint accepts optional pagination parameters, so you can specify the count and page of badges you want to retrieve. The API returns JSON including the badge class information for each badge, which you can then build into your site or application user interface.
 
 You can play around with the API endpoints using the [Swagger-powered interface](http://directory.openbadges.org/developers/api-explorer#!/search/recent).
 
@@ -19,7 +19,7 @@ http://directory.openbadges.org/recent
 http://directory.openbadges.org/recent?page=2&limit=10
 {% endhighlight %}
 
-The first example will return all recent badges, while the second will return the second page, where each page contains 10 badge classes. The endpoint returns up to 100 badges.
+The first example will return all recent badges, while the second will return the second page, where each page contains 10 badge classes. ___The endpoint returns up to 100 badges.___
 
 ### Implementing the Request
 
@@ -199,7 +199,7 @@ Let's do the same in a node.js app. Using the example above as a starting point,
 var badges = JSON.parse(badgeData).data;
 {% endhighlight %}
 
-Then, still in the same block, we can process the badge class contents as follows:
+Then, still in the same block, we can process the badge class content:
 
 {% highlight js %}
 var out="";
@@ -252,6 +252,8 @@ app.get('/badges', function(req, res){
 ## Conclusion
 
 Although these simple examples produce trivial results, you can begin to see how you can use the Open Badges Directory API `/recent` endpoint to retrieve the badge class data for badges recently indexed, building the results into your own custom user interface.
+
+With the ability to present recent badges, you can achieve dynamic effects which change whenever new badges are indexed by the Directory.
 
 To learn more about the badge class structure, see the [Specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 
