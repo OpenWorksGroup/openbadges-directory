@@ -241,7 +241,7 @@ _For more on the `/recent` endpoint, see <a href="get-recent-badges">Get Recent 
 
 Returns a specific badge class, based on its location URL (encoded).
 
-___NB:___ The location of a badge class is found within the `_directory._location` field, which is present in the data for each badge returned from the API endpoints `/recent` and `/search`. You can therefore combine the location endpoint with those other endpoints in your site or application.
+___NB:___ The location of a badge class is found within the `_directory._location` field, which is present in the data for each badge returned from the API endpoints `/recent` and `/search`. _You can therefore combine the location endpoint with those other endpoints if that suits the purpose of your site or application._
 
 __Available Request Parameters__
 
@@ -338,6 +338,7 @@ ___Parameter not required.___
 __Expected Request__
 
 {% highlight text %}
+/tags
 /tags?limit=10
 {% endhighlight %}
 
