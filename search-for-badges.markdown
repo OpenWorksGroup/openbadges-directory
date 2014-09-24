@@ -301,6 +301,8 @@ app.get('/badges', function(req, res){
 
 In the above examples we created simple pages with data retrieved from the Open Badges Directory API search endpoint. You could extend this in your own site or application, for example to allow your users to choose the search terms. However you build your search query, you can present the results in your own custom interface.
 
+As you can see, you could use the Directory API `/search` endpoint to execute user-configurable searches of available badges, connecting your earners to badges from the diverse range of issuers within the Open Badges ecosystem.
+
 To learn more about the badge class structure, see the [Specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 
 For the other Directory endpoints, see <a href="directory-api">Retrieve Badges</a>.
