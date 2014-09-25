@@ -76,7 +76,7 @@ __Example Requests__
 /search?q=delegate&issuer=achievery
 {% endhighlight %}
 
-__CURL Example__
+__cURL Example__
 
 {% highlight text %}
 curl http://directory.openbadges.org/search?q=maker
@@ -172,7 +172,7 @@ __Expected Request__
 GET /recent
 {% endhighlight %}
 
-__CURL Example__
+__cURL Example__
 
 {% highlight text %}
 curl http://directory.openbadges.org/recent
@@ -354,7 +354,7 @@ GET /tags
 GET /tags?limit=10
 {% endhighlight %}
 
-__CURL Example__
+__cURL Example__
 
 {% highlight text %}
 curl http://directory.openbadges.org/tags
