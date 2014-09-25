@@ -180,7 +180,7 @@ foreach ($dir_data as $item){
 }
 {% endhighlight %}
 
-Since the API returns all of the badge class data items, you can select whichever fields you want your users to see. In this case the badge name is written to a heading element, the image to an `img` element and the issuer name combined with the issuer URL to form an HTML link.
+Since the API returns all of the badge class data items, you can select whichever fields you want your users to see. In this case the badge name is written to a heading element, the image to an `img` element and the issuer name combined with the issuer URL to form an HTML link. ___You could use the same technique to provide a link to the criteria for the badge.___
 
 The HTML output would be as follows:
 
