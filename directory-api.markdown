@@ -63,7 +63,7 @@ ___At least one search parameter is required.___
 __Expected Request__
 
 {% highlight text %}
-/search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
+GET /search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
 {% endhighlight %}
 
 __Example Requests__
@@ -74,6 +74,12 @@ __Example Requests__
 /search?name=open%20badges%20explorer
 /search?issuer=achievery
 /search?q=delegate&issuer=achievery
+{% endhighlight %}
+
+__CURL Example__
+
+{% highlight text %}
+curl http://directory.openbadges.org/search?q=maker
 {% endhighlight %}
 
 __Expected Response__
@@ -163,7 +169,13 @@ ___NONE___
 __Expected Request__
 
 {% highlight text %}
-/recent
+GET /recent
+{% endhighlight %}
+
+__CURL Example__
+
+{% highlight text %}
+curl http://directory.openbadges.org/recent
 {% endhighlight %}
 
 __Expected Response__
@@ -250,7 +262,7 @@ The encoded badge class location, appended to the Directory URL.
 __Expected Request__
 
 {% highlight text %}
-/http%3A%2F%2Fissuersite.com%2Fbadgeclass
+GET /http%3A%2F%2Fissuersite.com%2Fbadgeclass
 {% endhighlight %}
 
 __Expected Response__
@@ -338,8 +350,14 @@ ___Parameter not required.___
 __Expected Request__
 
 {% highlight text %}
-/tags
-/tags?limit=10
+GET /tags
+GET /tags?limit=10
+{% endhighlight %}
+
+__CURL Example__
+
+{% highlight text %}
+curl http://directory.openbadges.org/tags
 {% endhighlight %}
 
 __Expected Response__
