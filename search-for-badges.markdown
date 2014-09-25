@@ -18,6 +18,7 @@ The search endpoint is `/search`, with several optional parameters - __although 
 * `tags` - comma-separated list of strings representing badge tags to match
 	* _more than one tag results in an AND condition, so the API will return only those badge classes with all of the tags you include_
 	* _works for partial strings, so for example "art" will return badges with "arts" tags_
+	* _tags used by badges in the Directory can be retrieved from the `/tags` endpoint_
 * `name` - string to match in the badge class name
 * `issuer` - string to match in the badge issuer name
 
@@ -60,6 +61,8 @@ http://directory.openbadges.org/search?tags=technology&issuer=achievery&limit=2
 {% endhighlight %}
 
 All of the parameters can be chained together as you require.
+
+___Note that if you want to search for particular badge tags, you can retrieve the tags currently used by badges in the Directory - see <a href="find-badge-tags">Find Badge Tags</a>. You can then pass selected tags to your search queries.___
 
 ### Implementing the Request
 
