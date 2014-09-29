@@ -401,4 +401,6 @@ _For more on the `/tags` endpoint, including an overview of how you can combine 
 
 NodeJS: [https://github.com/jpcamara/openbadges-directory-client](https://github.com/jpcamara/openbadges-directory-client )
 
+PHP: [https://github.com/Achievery/openbadges-directory-php-client](https://github.com/Achievery/openbadges-directory-php-client)
+
 Example Browser: [http://directory.openbadges.org/examples/browser/#/recent](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent)
