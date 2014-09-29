@@ -40,7 +40,7 @@ For an interactive experience with the API, visit the [API Explorer](http://dire
 <a name="api"></a>
 ## API
 
-The API provides various endpoints for retrieving badges classes currently indexed by the directory.
+The API provides various endpoints for retrieving badge classes currently indexed by the directory.
 
 <a name="search"></a>
 ### Search
@@ -63,7 +63,7 @@ ___At least one search parameter is required.___
 __Expected Request__
 
 {% highlight text %}
-/search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
+GET /search?q=text-to-find&tags=tag1,tag2&name=badge-name&issuer=issuer-name
 {% endhighlight %}
 
 __Example Requests__
@@ -74,6 +74,12 @@ __Example Requests__
 /search?name=open%20badges%20explorer
 /search?issuer=achievery
 /search?q=delegate&issuer=achievery
+{% endhighlight %}
+
+__cURL Example__
+
+{% highlight text %}
+curl http://directory.openbadges.org/search?q=maker
 {% endhighlight %}
 
 __Expected Response__
@@ -163,7 +169,13 @@ ___NONE___
 __Expected Request__
 
 {% highlight text %}
-/recent
+GET /recent
+{% endhighlight %}
+
+__cURL Example__
+
+{% highlight text %}
+curl http://directory.openbadges.org/recent
 {% endhighlight %}
 
 __Expected Response__
@@ -241,14 +253,16 @@ _For more on the `/recent` endpoint, see <a href="get-recent-badges">Get Recent 
 
 Returns a specific badge class, based on its location URL (encoded).
 
+___NB:___ The location of a badge class is found within the `_directory._location` field, which is present in the data for each badge returned from the API endpoints `/recent` and `/search`. _You can therefore combine the location endpoint with those other endpoints if that suits the purpose of your site or application._
+
 __Available Request Parameters__
 
-___NONE___
+The encoded badge class location, appended to the Directory URL.
 
 __Expected Request__
 
 {% highlight text %}
-/http%3A%2F%2Fissuersite.com%2Fbadgeclass
+GET /http%3A%2F%2Fissuersite.com%2Fbadgeclass
 {% endhighlight %}
 
 __Expected Response__
@@ -316,6 +330,8 @@ __Potential Errors__
 }
 {% endhighlight %}
 
+_For more on the `/{location}` endpoint, see <a href="badge-from-location">Get a Badge from its Location</a>._
+
 <a name="tags"></a>
 ### Tags
 
@@ -334,7 +350,14 @@ ___Parameter not required.___
 __Expected Request__
 
 {% highlight text %}
-/tags?limit=10
+GET /tags
+GET /tags?limit=10
+{% endhighlight %}
+
+__cURL Example__
+
+{% highlight text %}
+curl http://directory.openbadges.org/tags
 {% endhighlight %}
 
 __Expected Response__
@@ -377,5 +400,7 @@ _For more on the `/tags` endpoint, including an overview of how you can combine 
 ## Libraries and Examples
 
 NodeJS: [https://github.com/jpcamara/openbadges-directory-client](https://github.com/jpcamara/openbadges-directory-client )
+
+PHP: [https://github.com/Achievery/openbadges-directory-php-client](https://github.com/Achievery/openbadges-directory-php-client)
 
 Example Browser: [http://directory.openbadges.org/examples/browser/#/recent](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent)

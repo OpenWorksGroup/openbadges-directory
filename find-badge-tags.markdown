@@ -107,9 +107,9 @@ foreach ($dir_data as $item){
 }
 {% endhighlight %}
 
-This would write each tag name out within an anchor element, with the link pointing to a page called "badge-search.php", appended with a parameter named "tag" whose value is the tag name. In that page we can search for badges using the tag name.
+This would write each tag name out within an anchor element, with the link pointing to a page called "badge-search.php", appended with a parameter named "tag" whose value is the tag name. In that page we can search for badges using the selected tag.
 
-The HTML output for this would be something like this:
+The HTML output would be something like this:
 
 {% highlight html %}
 <a href='badge-search.php?tag=education'>education</a>
@@ -302,11 +302,13 @@ app.get('/badge-search', function(req, res){
 });
 {% endhighlight %}
 
-Again, this results in the same output we built in <a href="search-for-badges">Search For Badges</a>, but with the badge tag retrieved from the passed parameter originally defined in our HTML tag link.
+Again, this results in the same output we built in <a href="search-for-badges">Search For Badges</a>, but with the badge tag retrieved from the passed parameter originally defined in our HTML tag link (received from the `/tags` endpoint).
 
 ## Conclusion
 
 As you have seen in the simple example pages above, you can combine the Open Badges Directory `/tags` endpoint with the `/search` endpoint to create an interactive directory interface for your users, allowing them to find badges on the subjects or activity types they are interested in. 
+
+If you have an existing badge issuing site, this could mean linking earners to badges on similar topics to badges they have already earned.
 
 To learn more about the badge class structure, see the [Specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 

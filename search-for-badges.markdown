@@ -17,6 +17,8 @@ The search endpoint is `/search`, with several optional parameters - __although 
 * `q` - string to use in full-text search of badge classes
 * `tags` - comma-separated list of strings representing badge tags to match
 	* _more than one tag results in an AND condition, so the API will return only those badge classes with all of the tags you include_
+	* _works for partial strings, so for example "art" will return badges with "arts" tags_
+	* _tags used by badges in the Directory can be retrieved from the `/tags` endpoint_
 * `name` - string to match in the badge class name
 * `issuer` - string to match in the badge issuer name
 
@@ -59,6 +61,8 @@ http://directory.openbadges.org/search?tags=technology&issuer=achievery&limit=2
 {% endhighlight %}
 
 All of the parameters can be chained together as you require.
+
+___Note that if you want to search for particular badge tags, you can retrieve the tags currently used by badges in the Directory - see <a href="find-badge-tags">Find Badge Tags</a>. You can then pass selected tags to your search queries.___
 
 ### Implementing the Request
 
@@ -176,7 +180,7 @@ foreach ($dir_data as $item){
 }
 {% endhighlight %}
 
-Since the API returns all of the badge class data items, you can select whichever fields you want your users to see. In this case the badge name is written to a heading element, the image to an `img` element and the issuer name combined with the issuer URL to form an HTML link.
+Since the API returns all of the badge class data items, you can select whichever fields you want your users to see. In this case the badge name is written to a heading element, the image to an `img` element and the issuer name combined with the issuer URL to form an HTML link. ___You could use the same technique to provide a link to the criteria for the badge.___
 
 The HTML output would be as follows:
 
@@ -299,6 +303,8 @@ app.get('/badges', function(req, res){
 ## Conclusion
 
 In the above examples we created simple pages with data retrieved from the Open Badges Directory API search endpoint. You could extend this in your own site or application, for example to allow your users to choose the search terms. However you build your search query, you can present the results in your own custom interface.
+
+As you can see, you could use the Directory API `/search` endpoint to execute user-configurable searches of available badges, connecting your earners to badges from the diverse range of issuers within the Open Badges ecosystem.
 
 To learn more about the badge class structure, see the [Specification](https://github.com/mozilla/openbadges-specification/blob/master/Assertion/latest.md#badgeclass).
 
