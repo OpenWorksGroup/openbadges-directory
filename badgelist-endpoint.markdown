@@ -134,6 +134,6 @@ As before, you could check that your page returns the correct structure by visit
 <a name="register"></a>
 ## Registering
 
-Once you have your badge list URL ready, you can register it along with your other details at the [/openbadges-directory/add-badges#registration-form](Registration Form).
+Once you have your badge list URL ready, you can register it along with your other details at the [Registration Form](/openbadges-directory/add-badges#registration-form).
 
 The Directory will reindex your badge list every 24 hours. This means that the Directory data will update with any changes you make to the badge classes in your list, for example by adding or removing badges.
