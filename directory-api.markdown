@@ -6,8 +6,6 @@ layout: site
 
 The directory API endpoints allow you to retrieve currently indexed badges. At the moment the directory stores badge classes only, although further developments are under discussion. 
 
-To have your badges indexed by the directory or to find out more about the project, see the [home page](http://directory.openbadges.org).
-
 With the API, you can retrieve:
 
 * badges matching search parameters

@@ -71,7 +71,7 @@ header {
   border-bottom: solid 1px #275da1;
 }
 
-header h1 {
+header h1, header h1 a {
   letter-spacing: -1px;
   font-size: 40px;
   color: #fff;
@@ -503,4 +503,36 @@ form label {
 form label span {
   display: block;
   font-weight: bold;
+}
+
+.ribbon {
+  background-color: #fc9141;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue",Helvetica,Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.ribbon img {
+  height: 14px;
+  vertical-align: -2px;
+  margin-left: .25em;
+}
+
+.ribbon {
+  width: 190px;
+  padding-left: 12px;
+  position: absolute;
+  top: -2em;
+  left: -64px;
+  transform-origin: right bottom;
+  -webkit-transform-origin: right bottom;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  box-shadow: 0 0 8px #888;
 }
