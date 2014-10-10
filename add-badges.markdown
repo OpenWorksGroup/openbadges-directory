@@ -67,7 +67,7 @@ For more guidance on creating your badge list (including BadgeKit users), see [T
 
 ---------------------------------------
 
-<a name="#registration-form" /></a>
+<a name="registration-form" /></a>
 ## Registration Form
 
 When you have your badge class listing ready, copy the URL into the below form, together with your other details.
