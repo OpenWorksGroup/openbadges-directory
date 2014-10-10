@@ -101,7 +101,7 @@ header h2 {
 }
 
 #main-content {
-  width: 710px;
+  width: 700px;
   float: left;
 }
 
@@ -110,7 +110,7 @@ header h2 {
 }
 
 aside#sidebar {
-  width: 170px;
+  width: 180px;
   padding-left: 20px;
   min-height: 504px;
   float: right;
@@ -288,7 +288,7 @@ blockquote {
 
 ul li {
   list-style: disc inside;
-  padding-left: 20px;
+  padding-left: 5px;
 }
 
 ol li {
