@@ -65,6 +65,8 @@ The Directory would expect to find a valid badge class JSON listing at the speci
 
 For more guidance on creating your badge list (including BadgeKit users), see [The Badge List Endpoint](badgelist-endpoint).
 
+---------------------------------------
+
 <a name="#registration-form" /></a>
 ## Registration Form
 
