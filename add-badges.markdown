@@ -72,8 +72,6 @@ For more guidance on creating your badge list (including BadgeKit users), see [T
 
 When you have your badge class listing ready, copy the URL into the below form, together with your other details.
 
-___If you'd prefer to register via the API, see [Register Using the API](register-via-api).___
-
 {% include registration-form.html %}
 
 ---------------------------------------
