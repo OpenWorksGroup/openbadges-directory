@@ -111,7 +111,7 @@ header h2 {
 
 aside#sidebar {
   width: 100px;
-  padding-left: 20px;
+  padding-left: 10px;
   min-height: 504px;
   float: right;
   background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
