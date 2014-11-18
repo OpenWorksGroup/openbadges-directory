@@ -401,4 +401,4 @@ NodeJS: [https://github.com/jpcamara/openbadges-directory-client](https://github
 
 PHP: [https://github.com/Achievery/openbadges-directory-php-client](https://github.com/Achievery/openbadges-directory-php-client)
 
-Example Browser: [http://directory.openbadges.org/examples/browser/#/recent](http://test-openbadges-directory.herokuapp.com/examples/browser/#/recent)
+Example Browser: [http://directory.openbadges.org/examples/browser/#/recent](http://directory.openbadges.org/examples/browser/#/recent)
